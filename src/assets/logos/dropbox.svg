@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <rect x="3" y="3" width="74" height="74" rx="18" fill="#0061FF"/>
+  <!-- Dropbox 5-diamond logo in white -->
+  <!-- Top-left diamond -->
+  <polygon points="23,14 40,26 23,38  6,26" fill="white"/>
+  <!-- Top-right diamond -->
+  <polygon points="57,14 74,26 57,38 40,26" fill="white"/>
+  <!-- Center diamond (middle row) -->
+  <polygon points="40,38 57,50 40,62 23,50" fill="white"/>
+  <!-- Bottom-left diamond -->
+  <polygon points="23,40 40,52 23,64  6,52" fill="white"/>
+  <!-- Bottom-right diamond -->
+  <polygon points="57,40 74,52 57,64 40,52" fill="white"/>
+</svg>

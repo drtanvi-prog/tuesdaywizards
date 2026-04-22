@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <!-- Back rectangle (dark purple) -->
+  <rect x="32" y="34" width="42" height="36" rx="8" fill="#5059C9"/>
+  <!-- Person head (lighter purple, overlaps) -->
+  <circle cx="38" cy="28" r="15" fill="#7B83EB"/>
+  <!-- Person body connecting to rect -->
+  <rect x="24" y="38" width="28" height="18" rx="4" fill="#7B83EB"/>
+</svg>

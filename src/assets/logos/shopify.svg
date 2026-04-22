@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <!-- Bag body -->
+  <path d="M15 30 L11 70 L69 70 L65 30 Z" fill="#96BF48" rx="3"/>
+  <!-- Bag top rim -->
+  <rect x="15" y="26" width="50" height="8" rx="3" fill="#7AAD35"/>
+  <!-- Handle arch -->
+  <path d="M27 26 C27 12 53 12 53 26" fill="none" stroke="#96BF48" stroke-width="7" stroke-linecap="round"/>
+  <!-- White S -->
+  <text x="40" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="white" text-anchor="middle">S</text>
+</svg>
