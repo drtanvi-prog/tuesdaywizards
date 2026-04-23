@@ -1,71 +1,73 @@
-import React from 'react';
-import mondayImg from '../../assets/hero.png';
-import mondayLogo from '../../assets/logos/mwm.svg';
-import zapierLogo from '../../assets/logos/zapier.svg';
-import makeLogo from '../../assets/logos/make.svg';
-import n8nLogo from '../../assets/logos/n8n.svg';
-
-const services = [
-   {
-      title: 'Monday.com Workspace Setup & Customization',
-      img: mondayImg,
-      desc: `We design and build tailored monday.com workspaces that match your business workflows—from project tracking and CRM to HR and operations. This includes board creation, custom fields, automations, dashboards, and user permissions, all aligned with your team's unique needs.`,
-   },
-   {
-      title: 'Workflow Automation & Optimization',
-      img: mondayImg, // Fallback image for now
-      desc: `We streamline repetitive tasks and reduce manual work by building smart automations within monday.com. Whether it's internal task triggers or cross-board dependencies, we optimize your workflows to boost efficiency and ensure nothing slips through the cracks.`,
-   },
-   {
-      title: 'Third-Party Integrations & API Solutions',
-      icons: [mondayLogo, zapierLogo, makeLogo, n8nLogo],
-      desc: `We connect monday.com with your existing tools—like Google Workspace, Slack, HubSpot, Salesforce, Airtable, and more—using native integrations, Zapier, Make (Integromat), or custom API development. This creates a seamless data flow across platforms and a single source of truth for your team.`,
-   },
-];
+import { useState } from 'react'
+import { SERVICES } from '../services/servicesData'
+import ServiceTabList from '../services/ServiceTabList'
+import ServiceContentPanel from '../services/ServiceContentPanel'
+import zapierLogo  from '../../assets/logos/zapier.png'
+import slackLogo   from '../../assets/logos/slack.png'
+import hubspotLogo from '../../assets/logos/hubspot.webp'
+import n8nLogo     from '../../assets/logos/n8n.png'
 
 export default function ServicesSection() {
-   return (
-      <section className="w-full bg-gradient-to-b from-[#f8fafc] to-[#eef2fb] pt-8 pb-20 px-2">
-         <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black text-center mb-12 text-gray-900 tracking-tight drop-shadow-sm">Our Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               {services.map((service, idx) => (
-                  <div
-                     key={service.title}
-                     className="group rounded-3xl bg-white/60 backdrop-blur-xl border border-purple-100/70 shadow-xl hover:shadow-2xl hover:scale-[1.025] transition-all duration-300 flex flex-col items-stretch text-left overflow-hidden"
-                     style={{ minHeight: 440, boxShadow: '0 8px 40px 0 rgba(124,58,237,0.08), 0 1.5px 8px 0 rgba(124,58,237,0.04)' }}
-                  >
-                     {/* Card Top Visual */}
-                     <div className="relative flex items-center justify-center h-44 md:h-52 bg-gradient-to-br from-purple-100/60 to-violet-100/80">
-                        {service.img && (
-                           <img
-                              src={service.img}
-                              alt={service.title}
-                              className="w-full h-full object-cover object-top opacity-95 group-hover:scale-105 transition-transform duration-300 rounded-t-3xl"
-                           />
-                        )}
-                        {service.icons && (
-                           <div className="flex items-center justify-center gap-5 w-full h-full">
-                              {service.icons.map((icon, i) => (
-                                 <img key={i} src={icon} alt="Integration logo" className="w-14 h-14 object-contain drop-shadow-md" />
-                              ))}
-                           </div>
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent pointer-events-none" />
-                     </div>
-                     {/* Card Content */}
-                     <div className="flex-1 flex flex-col px-8 py-8">
-                        <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-3 leading-snug tracking-tight drop-shadow-sm">
-                           {service.title}
-                        </h3>
-                        <p className="text-gray-700 text-[16px] leading-relaxed font-medium">
-                           {service.desc}
-                        </p>
-                     </div>
-                  </div>
-               ))}
+  const [active, setActive] = useState(0)
+  const [visible, setVisible] = useState(true)
+
+  const switchTab = (idx) => {
+    if (idx === active) return
+    setVisible(false)
+    setTimeout(() => { setActive(idx); setVisible(true) }, 180)
+  }
+
+  return (
+    <section
+      id="services"
+      className="relative overflow-hidden font-sans"
+      style={{ background: 'linear-gradient(135deg, #0f0c1e 0%, #131130 40%, #0e1628 100%)' }}
+    >
+      {/* Background glows */}
+      <div
+        className="pointer-events-none absolute top-0 left-1/4 w-125 h-125 rounded-full opacity-20"
+        style={{ background: 'radial-gradient(circle, #7c3aed 0%, transparent 70%)', filter: 'blur(60px)' }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-0 right-1/4 w-100 h-100 rounded-full opacity-15"
+        style={{ background: 'radial-gradient(circle, #2563eb 0%, transparent 70%)', filter: 'blur(60px)' }}
+      />
+
+      <div className="relative max-w-330 mx-auto px-5 sm:px-6 xl:px-12 py-16 lg:py-24">
+
+        {/* Header */}
+        <div className="mb-12 lg:mb-16">
+          <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-white mb-3">Our Services</p>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <h2 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold text-white tracking-tight leading-tight max-w-2xl">
+              We offer a range of services to help you{' '}
+              <span className="text-purple-300">maximize</span>
+              {' '}monday.com's potential
+            </h2>
+
+            {/* Logo strip */}
+            <div className="flex items-center gap-2 shrink-0">
+              {[zapierLogo, n8nLogo, slackLogo, hubspotLogo].map((src, i) => (
+                <div
+                  key={i}
+                  className="w-9 h-9 rounded-xl flex items-center justify-center"
+                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}
+                >
+                  <img src={src} alt="" className="w-5 h-5 object-contain" />
+                </div>
+              ))}
+              <span className="text-[12px] text-white/40 ml-1">+more</span>
             </div>
-         </div>
-      </section>
-   );
+          </div>
+        </div>
+
+        {/* Tab layout */}
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start">
+          <ServiceTabList services={SERVICES} active={active} onSwitch={switchTab} />
+          <ServiceContentPanel svc={SERVICES[active]} visible={visible} />
+        </div>
+
+      </div>
+    </section>
+  )
 }

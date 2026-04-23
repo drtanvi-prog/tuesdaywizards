@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-  <rect x="3" y="3" width="74" height="74" rx="16" fill="#03363D"/>
-  <!-- Bold Z shape -->
-  <line x1="16" y1="22" x2="64" y2="22" stroke="white" stroke-width="9" stroke-linecap="round"/>
-  <line x1="64" y1="22" x2="16" y2="58" stroke="white" stroke-width="9" stroke-linecap="round"/>
-  <line x1="16" y1="58" x2="64" y2="58" stroke="white" stroke-width="9" stroke-linecap="round"/>
-</svg>
