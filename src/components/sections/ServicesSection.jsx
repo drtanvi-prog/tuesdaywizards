@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SERVICES } from '../services/servicesData'
+import { SERVICES } from '../../data/servicesData'
 import ServiceTabList from '../services/ServiceTabList'
 import ServiceContentPanel from '../services/ServiceContentPanel'
 import zapierLogo  from '../../assets/logos/zapier.png'
@@ -47,15 +47,18 @@ export default function ServicesSection() {
 
             {/* Logo strip */}
             <div className="flex items-center gap-2 shrink-0">
-              {[zapierLogo, n8nLogo, slackLogo, hubspotLogo].map((src, i) => (
-                <div
-                  key={i}
-                  className="w-9 h-9 rounded-xl flex items-center justify-center"
-                  style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}
-                >
-                  <img src={src} alt="" className="w-5 h-5 object-contain" />
-                </div>
-              ))}
+              {[zapierLogo, n8nLogo, slackLogo, hubspotLogo].map((src, i) => {
+                const isSlack = src === slackLogo
+                return (
+                  <div
+                    key={i}
+                    className="w-9 h-9 rounded-xl flex items-center justify-center"
+                    style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}
+                  >
+                    <img src={src} alt="" className={`${isSlack ? 'w-7 h-7' : 'w-5 h-5'} object-contain`} />
+                  </div>
+                )
+              })}
               <span className="text-[12px] text-white/40 ml-1">+more</span>
             </div>
           </div>

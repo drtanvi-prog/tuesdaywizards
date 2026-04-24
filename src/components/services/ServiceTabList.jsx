@@ -3,7 +3,7 @@ export default function ServiceTabList({ services, active, onSwitch }) {
     <div className="w-full lg:w-72 xl:w-80 shrink-0">
 
       {/* Mobile: horizontal scroll */}
-      <div className="flex lg:hidden gap-2 overflow-x-auto pb-2 scrollbar-hide">
+      <div className="flex lg:hidden gap-2 overflow-x-auto pb-2 styled-scrollbar">
         {services.map((s, i) => (
           <button
             key={s.id}

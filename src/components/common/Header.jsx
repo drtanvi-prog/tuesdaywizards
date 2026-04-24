@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown as ChevronDownIcon } from 'lucide-react'
-import logo from '../../assets/logo.avif'
+import logo from '../../assets/logo.png'
 import Button from '../ui/Button';
 
 const navLinks = [

@@ -3,7 +3,7 @@ import mondaycomLogo from '../../assets/mondaycom.png'
 
 export default function HeroTrustBadges() {
   return (
-    <div className="flex flex-wrap items-center gap-5 pt-2">
+    <div className="flex flex-nowrap items-center gap-3 sm:gap-5 pt-2">
       <div className="shrink-0">
         <TrustpilotWidget />
       </div>
@@ -11,7 +11,7 @@ export default function HeroTrustBadges() {
       <img
         src={mondaycomLogo}
         alt="monday.com Certified Partner"
-        className="h-14 w-auto object-contain shrink-0"
+        className="h-10 sm:h-14 w-auto object-contain shrink-0"
       />
     </div>
   )

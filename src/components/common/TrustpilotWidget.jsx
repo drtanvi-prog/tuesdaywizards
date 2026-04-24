@@ -21,7 +21,7 @@ export default function TrustpilotWidget() {
          data-template-id="53aa8807dec7e10d38f59f32"
          data-businessunit-id="69668c7a62f8fe8a8cb174c0"
          data-style-height="110px"
-         data-style-width="200px"
+         data-style-width="160px"
          data-token="86cf6b05-09b9-48df-a255-43b44b3f8301"
       >
          <a

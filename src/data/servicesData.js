@@ -1,16 +1,16 @@
-import { WorkspaceIcon, AutomationIcon, IntegrationIcon, CRMIcon, TrainingIcon } from './ServiceIcons'
+import { WorkspaceIcon, AutomationIcon, IntegrationIcon, CRMIcon, TrainingIcon } from '../components/services/ServiceIcons'
 
-import zapierLogo     from '../../assets/logos/zapier.png'
-import n8nLogo        from '../../assets/logos/n8n.png'
-import slackLogo      from '../../assets/logos/slack.png'
-import hubspotLogo    from '../../assets/logos/hubspot.webp'
-import salesforceLogo from '../../assets/logos/salesforce.jpg'
-import gmailLogo      from '../../assets/logos/gmail.png'
-import gcalLogo       from '../../assets/logos/gcal.webp'
-import outlookLogo    from '../../assets/logos/outlook.webp'
-import teamsLogo      from '../../assets/logos/teams.webp'
-import zoomLogo       from '../../assets/logos/zoom.png'
-import linkedinLogo   from '../../assets/logos/linkedin.png'
+import zapierLogo     from '../assets/logos/zapier.png'
+import n8nLogo        from '../assets/logos/n8n.png'
+import slackLogo      from '../assets/logos/slack.png'
+import hubspotLogo    from '../assets/logos/hubspot.webp'
+import salesforceLogo from '../assets/logos/salesforce.jpg'
+import gmailLogo      from '../assets/logos/gmail.png'
+import gcalLogo       from '../assets/logos/gcal.webp'
+import outlookLogo    from '../assets/logos/outlook.webp'
+import teamsLogo      from '../assets/logos/teams.webp'
+import zoomLogo       from '../assets/logos/zoom.png'
+import linkedinLogo   from '../assets/logos/linkedin.png'
 
 export const SERVICES = [
   {

@@ -39,9 +39,9 @@ export default function HeroTextContent({ onWatchPromo }) {
         {['Custom CRM Setups', 'Automated Workflows', 'Smart Integrations'].map(f => (
           <span
             key={f}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-purple-100 text-purple-700 text-[13px] font-medium shadow-sm"
+            className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/70 backdrop-blur-sm border border-purple-100 text-purple-700 text-[11px] sm:text-[13px] font-medium shadow-sm whitespace-nowrap"
           >
-            <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3}>
+            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={3}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
             {f}

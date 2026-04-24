@@ -1,7 +1,9 @@
 import React from 'react'
 import Header from './components/common/Header'
 import HeroSection from './components/sections/HeroSection'
-import ServicesSection from './components/sections/ServicesSection';
+import ServicesSection from './components/sections/ServicesSection'
+import TeamSection from './components/team/TeamSection'
+import CertificationsSection from './components/sections/CertificationsSection'
 
 const App = () => {
   return (
@@ -9,6 +11,8 @@ const App = () => {
       <Header />
       <HeroSection />
       <ServicesSection />
+      <TeamSection />
+      <CertificationsSection />
     </div>
   )
 }

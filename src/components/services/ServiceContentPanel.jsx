@@ -1,4 +1,4 @@
-import { CheckIcon, ArrowRight } from './ServiceIcons'
+import { CheckIcon } from './ServiceIcons'
 
 export default function ServiceContentPanel({ svc, visible }) {
   return (
@@ -84,7 +84,7 @@ export default function ServiceContentPanel({ svc, visible }) {
                     style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)' }}
                     title={logo.alt}
                   >
-                    <img src={logo.src} alt={logo.alt} className={`${logo.large ? 'w-8 h-8' : 'w-6 h-6'} object-contain`} />
+                    <img src={logo.src} alt={logo.alt} className={`${logo.large ? 'w-9 h-9' : 'w-6 h-6'} object-contain`} />
                   </div>
                 ))}
               </div>
@@ -107,7 +107,6 @@ export default function ServiceContentPanel({ svc, visible }) {
               }}
             >
               Book Free Consultant
-              <ArrowRight />
             </a>
             <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
               Free 30-min · No commitment
