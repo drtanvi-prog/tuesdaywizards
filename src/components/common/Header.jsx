@@ -230,22 +230,28 @@ export default function Header() {
 
           {/* Mobile CTAs */}
           <div className="flex flex-col gap-3 mt-5">
-            <a
+            <Button
+              as="a"
               href="https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04"
               target="_blank"
               rel="noopener noreferrer"
+              variant="primary"
+              className="justify-center text-[14px]"
               onClick={() => setMobileOpen(false)}
-              className="btn-animated flex items-center justify-center py-3.5 rounded-full text-white text-[14px] font-semibold shadow-md shadow-purple-200"
             >
               Book Free Consult
-            </a>
-            <a
-              href="#trial"
+            </Button>
+            <Button
+              as="a"
+              href="https://monday.com/?utm_campaign=partnerstack&utm_medium=diddly2965&utm_source=partner&pscd=try.monday.com&ps_partner_key=ZGlkZGx5Mjk2NQ&ps_xid=5Bm7mq2GklTTcI&gsxid=5Bm7mq2GklTTcI&gspk=ZGlkZGx5Mjk2NQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+              className="justify-center text-[14px]"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center py-3.5 rounded-full border border-purple-200 text-purple-700 text-[14px] font-semibold hover:bg-purple-50 transition-colors"
             >
               Sign Up For Free Trial
-            </a>
+            </Button>
           </div>
         </div>
       </div>

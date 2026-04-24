@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 
-export default function TrustpilotWidget() {
+export default function TrustpilotWidget({ width = '160px', height = '110px' }) {
    useEffect(() => {
-      // Load Trustpilot script only once
       const scriptId = "trustpilot-widget-script";
       if (!document.getElementById(scriptId)) {
          const script = document.createElement("script");
@@ -20,8 +19,8 @@ export default function TrustpilotWidget() {
          data-locale="en-US"
          data-template-id="53aa8807dec7e10d38f59f32"
          data-businessunit-id="69668c7a62f8fe8a8cb174c0"
-         data-style-height="110px"
-         data-style-width="160px"
+         data-style-height={height}
+         data-style-width={width}
          data-token="86cf6b05-09b9-48df-a255-43b44b3f8301"
       >
          <a

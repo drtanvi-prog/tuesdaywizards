@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
 @theme {
   --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 }
@@ -9,19 +22,33 @@
   font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
 @keyframes shimmer-slide {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes shine-sweep {
-  0%   { transform: translateX(-100%) skewX(-15deg); }
-  100% { transform: translateX(250%) skewX(-15deg); }
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  100% {
+    transform: translateX(250%) skewX(-15deg);
+  }
 }
 
 .btn-animated {
@@ -33,38 +60,73 @@ a, button {
 }
 
 @keyframes float-y {
-  0%, 100% { transform: translate(-50%, -50%) translateY(0px);   }
-  50%       { transform: translate(-50%, -50%) translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
 }
 
 @keyframes pulse-ring {
-  0%   { transform: translate(-50%, -50%) scale(1);   opacity: .5; }
-  100% { transform: translate(-50%, -50%) scale(1.55); opacity: 0;  }
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: .5;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.55);
+    opacity: 0;
+  }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes marquee-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
+
 .marquee-track {
   animation: marquee-scroll 28s linear infinite;
 }
+
 .marquee-track:hover {
   animation-play-state: paused;
 }
 
 @keyframes marquee-scroll-reverse {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
+
 .marquee-track-reverse {
   animation: marquee-scroll-reverse 34s linear infinite;
 }
+
 .marquee-track-reverse:hover {
   animation-play-state: paused;
 }
@@ -72,28 +134,32 @@ a, button {
 .cert-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
 .styled-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #7c3aed rgba(255,255,255,0.08);
+  scrollbar-color: #7c3aed rgba(255, 255, 255, 0.08);
 }
+
 .styled-scrollbar::-webkit-scrollbar {
   height: 3px;
 }
+
 .styled-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 99px;
 }
+
 .styled-scrollbar::-webkit-scrollbar-thumb {
   background: #7c3aed;
   border-radius: 99px;
@@ -103,11 +169,9 @@ a, button {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.28) 50%,
-    transparent 60%
-  );
+  background: linear-gradient(105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.28) 50%,
+      transparent 60%);
   animation: shine-sweep 3s ease-in-out infinite;
 }
