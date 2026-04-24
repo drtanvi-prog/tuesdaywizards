@@ -11,7 +11,7 @@ export default function HeroTrustBadges() {
       <img
         src={mondaycomLogo}
         alt="monday.com Certified Partner"
-        className="h-10 sm:h-14 w-auto object-contain shrink-0"
+        className="h-16 sm:h-24 w-auto object-contain shrink-0"
       />
     </div>
   )

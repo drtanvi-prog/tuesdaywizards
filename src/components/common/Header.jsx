@@ -59,10 +59,7 @@ export default function Header() {
 
   return (
     <header
-      className={`font-sans sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
-        ? 'bg-white/90 backdrop-blur-xl shadow-[0_4px_32px_rgba(109,40,217,0.10)] border-b border-purple-100/40'
-        : 'bg-white border-b border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.06)]'
-        }`}
+      className="font-sans sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.06)] transition-all duration-300"
     >
       <div className="max-w-[1320px] mx-auto px-6 xl:px-12">
         <div className="flex items-center justify-between h-20">

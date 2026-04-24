@@ -12,10 +12,10 @@ export default function HeroTextContent({ onWatchPromo }) {
         <h1
           className="text-[30px] sm:text-[36px] md:text-[42px] lg:text-[46px] xl:text-[54px] font-extrabold tracking-tight leading-[1.1]"
           style={{
-            background:           'linear-gradient(125deg, #7e22ce 0%, #9A59B5 50%, #a855f7 100%)',
+            background: 'linear-gradient(125deg, #7e22ce 0%, #9A59B5 50%, #a855f7 100%)',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor:  'transparent',
-            backgroundClip:       'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
           }}
         >
           Monday.com CRM
@@ -60,9 +60,10 @@ export default function HeroTextContent({ onWatchPromo }) {
         >
           Schedule a Free Discovery Call
         </Button>
-        <button
+        <Button
           onClick={onWatchPromo}
-          className="inline-flex items-center gap-2 rounded-lg border border-gray-300/80 bg-white/60 backdrop-blur-sm text-gray-600 hover:text-purple-700 hover:border-purple-300 font-semibold h-12 px-6 text-[15px] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-300 group"
+          variant="secondary"
+          className="group text-[15px]"
         >
           <span className="flex items-center justify-center w-6 h-6 rounded-full bg-purple-100 group-hover:bg-purple-200 transition-colors duration-200 shrink-0">
             <svg className="w-3 h-3 translate-x-px text-purple-700" viewBox="0 0 24 24" fill="currentColor">
@@ -70,7 +71,7 @@ export default function HeroTextContent({ onWatchPromo }) {
             </svg>
           </span>
           Watch Promo
-        </button>
+        </Button>
       </div>
 
       <HeroTrustBadges />
