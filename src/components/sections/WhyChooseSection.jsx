@@ -85,6 +85,19 @@ function UpworkButton() {
 }
 
 export default function WhyChooseSection() {
+  const [activeBadge, setActiveBadge] = useState(null)
+  const badgesRef = useRef(null)
+
+  useEffect(() => {
+    const handleOutside = (e) => {
+      if (badgesRef.current && !badgesRef.current.contains(e.target)) {
+        setActiveBadge(null)
+      }
+    }
+    document.addEventListener('click', handleOutside)
+    return () => document.removeEventListener('click', handleOutside)
+  }, [])
+
   const featureRef = useRef(null)
   const featureInView = useInView(featureRef, { once: true, margin: '-60px' })
   const bottomRef = useRef(null)
@@ -123,16 +136,25 @@ export default function WhyChooseSection() {
             </h2>
 
             {/* Product badges below heading */}
-            <div className="flex flex-wrap items-center gap-2">
-              {PRODUCTS.map(p => (
-                <div
-                  key={p.label}
-                  className="px-2.5 py-1.5 rounded-lg transition-all duration-300 opacity-40 grayscale hover:opacity-100 hover:grayscale-0"
-                  style={{ background: 'rgba(255,255,255,0.92)' }}
-                >
-                  <img src={p.src} alt={p.label} className="h-4 sm:h-5 w-auto object-contain" />
-                </div>
-              ))}
+            <div ref={badgesRef} className="flex flex-wrap items-center gap-2">
+              {PRODUCTS.map(p => {
+                const isActive = activeBadge === p.label
+                return (
+                  <div
+                    key={p.label}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setActiveBadge(prev => prev === p.label ? null : p.label)
+                    }}
+                    className={`px-2.5 py-1.5 rounded-lg transition-all duration-300 cursor-pointer hover:opacity-100 hover:grayscale-0 ${
+                      isActive ? 'opacity-100 grayscale-0' : 'opacity-40 grayscale'
+                    }`}
+                    style={{ background: 'rgba(255,255,255,0.92)' }}
+                  >
+                    <img src={p.src} alt={p.label} className="h-4 sm:h-5 w-auto object-contain" draggable={false} />
+                  </div>
+                )
+              })}
             </div>
           </motion.div>
 

@@ -7,6 +7,7 @@ import WhyChooseSection from './components/sections/WhyChooseSection'
 import TeamSection from './components/team/TeamSection'
 import CertificationsSection from './components/sections/CertificationsSection'
 import IntegrationsSection from './components/sections/IntegrationsSection'
+import TestimonialsSection from './components/sections/TestimonialsSection'
 
 const App = () => {
   useSmoothScroll()
@@ -20,6 +21,7 @@ const App = () => {
       <CertificationsSection />
       <WhyChooseSection />
       <IntegrationsSection />
+      <TestimonialsSection />
     </div>
   )
 }

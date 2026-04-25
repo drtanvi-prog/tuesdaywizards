@@ -62,11 +62,11 @@ export default function Header() {
       className="font-sans sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.06)] transition-all duration-300"
     >
       <div className="max-w-[1320px] mx-auto px-6 xl:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* ── Logo ── */}
           <a href="/" className="shrink-0">
-            <img src={logo} alt="Tuesday Wizard" className="h-[52px] w-auto object-contain" />
+            <img src={logo} alt="Tuesday Wizard" className="h-10 lg:h-13 w-auto object-contain" />
           </a>
 
           {/* ── Desktop Nav ── */}
@@ -169,8 +169,8 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             {mobileOpen
-              ? <X className="w-4.5 h-4.5" strokeWidth={2} />
-              : <Menu className="w-4.5 h-4.5" strokeWidth={2} />
+              ? <X className="w-6 h-6" strokeWidth={2} />
+              : <Menu className="w-6 h-6" strokeWidth={2} />
             }
           </button>
         </div>
