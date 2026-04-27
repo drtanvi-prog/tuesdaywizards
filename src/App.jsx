@@ -7,6 +7,7 @@ import WhyChooseSection from './components/sections/WhyChooseSection'
 import TeamSection from './components/team/TeamSection'
 import CertificationsSection from './components/sections/CertificationsSection'
 import IntegrationsSection from './components/sections/IntegrationsSection'
+import PortfolioSection from './components/sections/PortfolioSection'
 import TestimonialsSection from './components/sections/TestimonialsSection'
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <WhyChooseSection />
       <IntegrationsSection />
       <TestimonialsSection />
+      <PortfolioSection />
     </div>
   )
 }

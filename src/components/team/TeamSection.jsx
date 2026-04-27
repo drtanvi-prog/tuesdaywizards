@@ -26,7 +26,7 @@ export default function TeamSection() {
   const [hoveredId, setHoveredId] = useState(null)
 
   return (
-    <section className="py-20 lg:py-28 font-sans" style={{ background: '#ffffff' }}>
+    <section id="about" className="py-20 lg:py-28 font-sans" style={{ background: '#ffffff' }}>
       <div className="max-w-330 mx-auto px-5 sm:px-6 xl:px-12">
 
         {/* Header */}

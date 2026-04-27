@@ -1,4 +1,5 @@
 import { CheckIcon } from './ServiceIcons'
+import Button from '../ui/Button'
 
 export default function ServiceContentPanel({ svc, visible }) {
   return (
@@ -19,8 +20,11 @@ export default function ServiceContentPanel({ svc, visible }) {
           boxShadow:      '0 16px 48px rgba(0,0,0,0.35)',
         }}
       >
-        {/* Top accent bar — solid */}
-        <div className="h-0.75 w-full" style={{ background: '#7c3aed' }} />
+        {/* Top accent bar */}
+        <div
+          className="h-0.75 w-full"
+          style={{ background: 'linear-gradient(120deg, #7a3f99, #9A59B5, #b06fcc)' }}
+        />
 
         <div className="p-7 sm:p-10">
 
@@ -28,10 +32,10 @@ export default function ServiceContentPanel({ svc, visible }) {
           <div className="flex items-center gap-3 mb-6">
             <div
               className="flex items-center gap-2.5 px-4 py-2 rounded-lg"
-              style={{ background: 'rgba(124,58,237,0.18)', border: '1px solid rgba(124,58,237,0.3)' }}
+              style={{ background: 'rgba(154,89,181,0.18)', border: '1px solid rgba(154,89,181,0.3)' }}
             >
               <span className="text-[22px] font-black text-white">{svc.stat.value}</span>
-              <span className="text-[12px] text-purple-300 font-medium">{svc.stat.label}</span>
+              <span className="text-[12px] text-purple-400 font-medium">{svc.stat.label}</span>
             </div>
           </div>
 
@@ -96,18 +100,15 @@ export default function ServiceContentPanel({ svc, visible }) {
             className="flex flex-wrap items-center gap-4 pt-6"
             style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
           >
-            <a
+            <Button
+              as="a"
               href="https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-12 px-6 rounded-lg font-semibold text-[14px] text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
-              style={{
-                background: '#7c3aed',
-                boxShadow:  '0 4px 16px rgba(124,58,237,0.35)',
-              }}
+              variant="primary"
             >
               Book Free Consultant
-            </a>
+            </Button>
             <span className="text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
               Free 30-min · No commitment
             </span>

@@ -1,12 +1,12 @@
 import Button from '../ui/Button'
 
-import outlook from '../../assets/logos/outlook.webp'
-import teams from '../../assets/logos/teams.webp'
-import dropbox from '../../assets/logos/dropbox.webp'
+import outlook from '../../assets/logos/outlook.png'
+import teams from '../../assets/logos/teams.png'
+import dropbox from '../../assets/logos/dropbox.png'
 import slack from '../../assets/logos/slack.png'
 import zoom from '../../assets/logos/zoom.png'
-import gcal from '../../assets/logos/gcal.webp'
-import gdrive from '../../assets/logos/gdrive.webp'
+import gcal from '../../assets/logos/gcal.png'
+import gdrive from '../../assets/logos/gdrive.png'
 import gmail from '../../assets/logos/gmail.png'
 import linkedin from '../../assets/logos/linkedin.png'
 import make from '../../assets/logos/make.webp'
@@ -21,7 +21,7 @@ const LOGOS = [
   { src: outlook, alt: 'Outlook' },
   { src: teams, alt: 'Microsoft Teams' },
   { src: dropbox, alt: 'Dropbox' },
-  { src: slack, alt: 'Slack', cls: 'max-h-14 max-w-26' },
+  { src: slack, alt: 'Slack', cls: 'max-h-18 max-w-32' },
   { src: zoom, alt: 'Zoom' },
   { src: gcal, alt: 'Google Calendar' },
   { src: gdrive, alt: 'Google Drive' },
@@ -54,7 +54,7 @@ export default function IntegrationsSection() {
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-extrabold text-gray-900 tracking-tight leading-[1.15] mb-5">
             Some platforms{' '}
             <span style={{
-              background: 'linear-gradient(125deg,#7c3aed 0%,#a855f7 100%)',
+              background: 'linear-gradient(125deg, #a78bfa 0%, #c084fc 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -70,19 +70,11 @@ export default function IntegrationsSection() {
           </p>
         </div>
 
-        {/* ── Logos: marquee on mobile, grid on desktop ── */}
+        {/* ── Logos ── */}
         <div className="mb-12">
 
-          {/* Mobile marquee — CSS animation, same as CertificationsSection */}
+          {/* Mobile only: marquee */}
           <div className="block sm:hidden relative">
-            <div
-              className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 z-10"
-              style={{ background: 'linear-gradient(to right,#f8f7fc,transparent)' }}
-            />
-            <div
-              className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 z-10"
-              style={{ background: 'linear-gradient(to left,#f8f7fc,transparent)' }}
-            />
             <div className="flex marquee-track" style={{ width: 'max-content' }}>
               {doubled.map((logo, i) => (
                 <div
@@ -100,7 +92,7 @@ export default function IntegrationsSection() {
             </div>
           </div>
 
-          {/* Desktop grid */}
+          {/* Desktop: static grid */}
           <div className="hidden sm:flex flex-wrap justify-center gap-x-10 gap-y-8">
             {LOGOS.map(logo => (
               <div

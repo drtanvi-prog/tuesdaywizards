@@ -7,6 +7,7 @@ const ROW2 = [...[...TESTIMONIALS].reverse(), ...[...TESTIMONIALS].reverse()]
 export default function TestimonialsSection() {
   return (
     <section
+      id="testimonials"
       className="font-sans py-20 lg:py-28 overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #0f0c1e 0%, #131130 40%, #0e1628 100%)' }}
     >

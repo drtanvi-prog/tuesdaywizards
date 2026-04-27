@@ -23,25 +23,20 @@ export default function ServicesSection() {
       className="relative overflow-hidden font-sans"
       style={{ background: 'linear-gradient(135deg, #0f0c1e 0%, #131130 40%, #0e1628 100%)' }}
     >
-      {/* Background glows */}
-      <div
-        className="pointer-events-none absolute top-0 left-1/4 w-125 h-125 rounded-full opacity-20"
-        style={{ background: 'radial-gradient(circle, #7c3aed 0%, transparent 70%)', filter: 'blur(60px)' }}
-      />
-      <div
-        className="pointer-events-none absolute bottom-0 right-1/4 w-100 h-100 rounded-full opacity-15"
-        style={{ background: 'radial-gradient(circle, #2563eb 0%, transparent 70%)', filter: 'blur(60px)' }}
-      />
-
       <div className="relative max-w-330 mx-auto px-5 sm:px-6 xl:px-12 py-16 lg:py-24">
 
         {/* Header */}
         <div className="mb-12 lg:mb-16">
-          <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-white mb-3">Our Services</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-purple-400 mb-3">Our Services</p>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <h2 className="text-[26px] sm:text-[32px] lg:text-[40px] font-extrabold text-white tracking-tight leading-tight max-w-2xl">
               We offer a range of services to help you{' '}
-              <span className="text-purple-300">maximize</span>
+              <span style={{
+                background: 'linear-gradient(125deg, #a78bfa 0%, #c084fc 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>maximize</span>
               {' '}monday.com's potential
             </h2>
 
