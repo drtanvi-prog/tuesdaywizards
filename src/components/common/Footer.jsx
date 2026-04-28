@@ -29,7 +29,7 @@ function FooterLink({ href, children, external }) {
     <a
       href={href}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="flex items-center gap-2 text-[13px] transition-colors duration-150"
+      className="flex items-center gap-2 text-[13px] transition-colors duration-150 whitespace-nowrap"
       style={{ color: 'rgba(255,255,255,0.46)' }}
       onMouseEnter={e => e.currentTarget.style.color = '#c084fc'}
       onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.46)'}
@@ -171,7 +171,7 @@ export default function Footer() {
           </div>
 
           {/* Col 4 — Contact */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.26)' }}>
               Contact
             </p>
