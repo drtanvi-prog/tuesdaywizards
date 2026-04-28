@@ -12,12 +12,36 @@ const navLinks = [
 ]
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [mobileOpen])
+    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = '' };
+  }, [mobileOpen]);
+
+  // Scrollspy effect
+  useEffect(() => {
+    const sectionIds = navLinks.map(l => l.href.replace('#', ''));
+    function onScroll() {
+      let found = '';
+      for (let i = 0; i < sectionIds.length; i++) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // Trigger active state as soon as section top is under header (header ~72px)
+          if (rect.top <= 72 && rect.bottom > 72) {
+            found = sectionIds[i];
+            break;
+          }
+        }
+      }
+      setActiveSection(found);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <header
@@ -37,17 +61,27 @@ export default function Header() {
 
           {/* ── Desktop Nav ── */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.target}
-                rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
-                className="relative px-4 py-2 text-[14.5px] font-medium text-gray-600 hover:text-purple-700 rounded-lg hover:bg-purple-50/60 transition-all duration-150"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const sectionId = link.href.replace('#', '');
+              const isActive = activeSection === sectionId || (activeSection === '' && link.href === '#');
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.target}
+                  rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+                  className={
+                    `relative px-4 py-2 text-[14.5px] font-medium rounded-lg transition-all duration-150 ` +
+                    (isActive
+                      ? 'text-purple-700 bg-purple-50/60'
+                      : 'text-gray-600 hover:text-purple-700 hover:bg-purple-50/60')
+                  }
+                // No bold for active nav, match hover style
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
 
           {/* ── Desktop CTAs ── */}
@@ -96,18 +130,28 @@ export default function Header() {
 
           {/* Nav links */}
           <div className="flex flex-col">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.target}
-                rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
-                onClick={() => setMobileOpen(false)}
-                className="py-3.5 text-[15px] font-medium text-gray-700 hover:text-purple-700 border-b border-gray-50 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const sectionId = link.href.replace('#', '');
+              const isActive = activeSection === sectionId || (activeSection === '' && link.href === '#');
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.target}
+                  rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+                  onClick={() => setMobileOpen(false)}
+                  className={
+                    `py-3.5 text-[15px] font-medium border-b border-gray-50 transition-colors ` +
+                    (isActive
+                      ? 'text-purple-700'
+                      : 'text-gray-700 hover:text-purple-700')
+                  }
+                // No bold or background for active nav
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
 
           {/* Mobile CTAs */}
@@ -138,5 +182,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

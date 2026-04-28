@@ -19,7 +19,7 @@ const SERVICES = [
 ]
 
 const UpworkIcon = () => (
-  <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 shrink-0">
+  <svg viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 shrink-0">
     <path d="M13.9531 12.0977C13.2891 12.0977 12.6641 11.8164 12.1016 11.3594L12.2383 10.7109L12.2422 10.6875C12.3672 10 12.7539 8.84375 13.9531 8.84375C14.8516 8.84375 15.582 9.57422 15.582 10.4727C15.582 11.3711 14.8516 12.0977 13.9531 12.0977ZM13.9531 7.19531C12.4219 7.19531 11.2383 8.1875 10.7539 9.82422C10.0195 8.71875 9.46094 7.39453 9.13672 6.27734H7.48828V10.5625C7.48828 11.4102 6.80078 12.0977 5.95312 12.0977C5.10547 12.0977 4.41797 11.4102 4.41797 10.5625V6.27344H2.77344V10.5586C2.77344 12.3125 4.19922 13.7539 5.95312 13.7539C7.70703 13.7539 9.13281 12.3125 9.13281 10.5586V9.83984C9.45312 10.5078 9.84375 11.1836 10.3203 11.7773L9.3125 16.5195H10.9961L11.7266 13.082C12.3672 13.4922 13.1016 13.75 13.9453 13.75C15.75 13.75 17.2188 12.2734 17.2188 10.4648C17.2227 8.66406 15.7578 7.19531 13.9531 7.19531Z" />
   </svg>
 )
@@ -102,9 +102,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
-                className="text-[13.5px] px-6"
+                className="text-[13.5px] px-6 justify-center text-center sm:text-left"
               >
-                Claim Your Free Consultation
+                <span className="block text-center sm:text-left">Claim Your Free Consultation</span>
               </Button>
               <Button
                 as="a"
@@ -112,9 +112,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"
-                className="text-[13.5px] px-6"
+                className="text-[13.5px] px-6 justify-center text-center sm:text-left"
               >
-                Sign Up For a Free Trial
+                <span className="block text-center sm:text-left">Sign Up For a Free Trial</span>
               </Button>
             </div>
             <p className="text-[12px]" style={{ color: 'rgba(255,255,255,0.28)' }}>
