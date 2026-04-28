@@ -9,6 +9,7 @@ import CertificationsSection from './components/sections/CertificationsSection'
 import IntegrationsSection from './components/sections/IntegrationsSection'
 import PortfolioSection from './components/sections/PortfolioSection'
 import TestimonialsSection from './components/sections/TestimonialsSection'
+import Footer from './components/common/Footer'
 
 const App = () => {
   useSmoothScroll()
@@ -24,6 +25,7 @@ const App = () => {
       <IntegrationsSection />
       <TestimonialsSection />
       <PortfolioSection />
+      <Footer />
     </div>
   )
 }

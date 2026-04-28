@@ -9,7 +9,7 @@ export default function CertificationsSection() {
 
       {/* ── Header ── */}
       <div className="text-center mb-10 px-5">
-        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-purple-600 mb-3">
+        <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-purple-600 mb-3">
           Certifications &amp; Partnerships
         </p>
         <h2 className="text-[22px] sm:text-[26px] lg:text-[30px] font-extrabold text-gray-900 tracking-tight">

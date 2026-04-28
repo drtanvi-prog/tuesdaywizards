@@ -2,36 +2,32 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-import carousel1  from '../../assets/portfollio/carousel1.avif'
-import carousel2  from '../../assets/portfollio/carousel2.avif'
-import carousel3  from '../../assets/portfollio/carousel3.avif'
-import carousel4  from '../../assets/portfollio/carousel4.avif'
-import carousel5  from '../../assets/portfollio/carousel5.avif'
-import carousel6  from '../../assets/portfollio/carousel6.avif'
-import carousel7  from '../../assets/portfollio/carousel7.avif'
-import carousel8  from '../../assets/portfollio/carousel8.avif'
-import carousel9  from '../../assets/portfollio/carousel9.avif'
-import carousel10 from '../../assets/portfollio/carousel10.avif'
-import carousel11 from '../../assets/portfollio/carousel11.avif'
+import img1 from '../../assets/portfollio/carousel1.jpeg'
+import img2 from '../../assets/portfollio/carousel2.jpeg'
+import img3 from '../../assets/portfollio/carousel3.jpeg'
+import img4 from '../../assets/portfollio/carousel4.jpeg'
+import img5 from '../../assets/portfollio/carousel5.jpeg'
+import img6 from '../../assets/portfollio/carousel6.jpeg'
+import img7 from '../../assets/portfollio/carousel7.jpeg'
+import img8 from '../../assets/portfollio/carousel8.jpeg'
+import img9 from '../../assets/portfollio/carousel9.jpeg'
 
 const IMAGES = [
-  { id: 1,  src: carousel1  },
-  { id: 2,  src: carousel2  },
-  { id: 3,  src: carousel3  },
-  { id: 4,  src: carousel4  },
-  { id: 5,  src: carousel5  },
-  { id: 6,  src: carousel6  },
-  { id: 7,  src: carousel7  },
-  { id: 8,  src: carousel8  },
-  { id: 9,  src: carousel9  },
-  { id: 10, src: carousel10 },
-  { id: 11, src: carousel11 },
+  { id: 1, src: img1, alt: 'Customer Success Planning' },
+  { id: 2, src: img2, alt: 'Resource Capacity Planning' },
+  { id: 3, src: img3, alt: 'Company KPIs Dashboard' },
+  { id: 4, src: img4, alt: 'Deals Pipeline Overview' },
+  { id: 5, src: img5, alt: 'Q2 Overview Dashboard' },
+  { id: 6, src: img6, alt: 'Social Media Campaign Dashboard' },
+  { id: 7, src: img7, alt: 'Marketing Overview Timeline' },
+  { id: 8, src: img8, alt: 'Construction Project Dashboard' },
+  { id: 9, src: img9, alt: 'Make Automation Scenario' },
 ]
 
 const fadeVariants = {
-  enter:  { opacity: 0 },
+  enter: { opacity: 0 },
   center: { opacity: 1 },
-  exit:   { opacity: 0 },
+  exit: { opacity: 0 },
 }
 
 export default function PortfolioSection() {
@@ -64,7 +60,7 @@ export default function PortfolioSection() {
           <h2 className="text-[28px] sm:text-[36px] lg:text-[44px] font-extrabold text-gray-900 tracking-tight leading-[1.12]">
             Our work,{' '}
             <span style={{
-              background: 'linear-gradient(125deg,#7c3aed 0%,#a855f7 100%)',
+              background: 'linear-gradient(125deg, #a78bfa 0%, #c084fc 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -75,7 +71,7 @@ export default function PortfolioSection() {
         </div>
 
         {/* ── Image slider ── */}
-        <div className="relative rounded-2xl overflow-hidden aspect-16/7 shadow-[0_24px_64px_rgba(0,0,0,0.14),0_4px_16px_rgba(0,0,0,0.08)] border border-gray-100/80">
+        <div className="relative rounded-2xl overflow-hidden aspect-video shadow-[0_24px_64px_rgba(0,0,0,0.14),0_4px_16px_rgba(0,0,0,0.08)] border border-gray-100/80">
 
           {/* Slides */}
           <AnimatePresence mode="wait">
@@ -90,7 +86,7 @@ export default function PortfolioSection() {
             >
               <img
                 src={IMAGES[cur].src}
-                alt={`Portfolio ${cur + 1}`}
+                alt={IMAGES[cur].alt}
                 className="w-full h-full object-cover"
                 draggable={false}
               />
@@ -143,8 +139,8 @@ export default function PortfolioSection() {
                 aria-label={`Go to slide ${i + 1}`}
                 className="rounded-full transition-all duration-300"
                 style={{
-                  width:      i === cur ? 22 : 8,
-                  height:     8,
+                  width: i === cur ? 22 : 8,
+                  height: 8,
                   background: i === cur
                     ? 'rgba(255,255,255,0.95)'
                     : 'rgba(255,255,255,0.45)',

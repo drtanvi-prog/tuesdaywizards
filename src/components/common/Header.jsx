@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'About Us', href: '#about' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Contact', href: 'https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04', target: '_blank' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Header() {
@@ -27,7 +27,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* ── Logo ── */}
-          <a href="/" className="shrink-0">
+          <a
+            href="#"
+            onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            className="shrink-0"
+          >
             <img src={logo} alt="Tuesday Wizard" className="h-10 lg:h-13 w-auto object-contain" />
           </a>
 
@@ -50,7 +54,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Button
               as="a"
-              href="https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04"
+              href="https://calendly.com/tuesdaywizard/30minutestrategy"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"
@@ -110,7 +114,7 @@ export default function Header() {
           <div className="flex flex-col gap-3 mt-5">
             <Button
               as="a"
-              href="https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04"
+              href="https://calendly.com/tuesdaywizard/30minutestrategy"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"

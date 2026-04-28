@@ -52,7 +52,7 @@ export default function HeroTextContent({ onWatchPromo }) {
       <div className="flex flex-wrap items-center gap-4">
         <Button
           as="a"
-          href="https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04"
+          href="https://calendly.com/tuesdaywizard/30minutestrategy"
           target="_blank"
           rel="noopener noreferrer"
           variant="primary"

@@ -102,7 +102,7 @@ export default function ServiceContentPanel({ svc, visible }) {
           >
             <Button
               as="a"
-              href="https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04"
+              href="https://calendly.com/tuesdaywizard/30minutestrategy"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"

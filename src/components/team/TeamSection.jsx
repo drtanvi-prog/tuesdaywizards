@@ -31,7 +31,7 @@ export default function TeamSection() {
 
         {/* Header */}
         <div className="mb-10 lg:mb-14 max-w-2xl mx-auto text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-purple-600 mb-3">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-purple-600 mb-3">
             Authorized Partners for Monday.com
           </p>
           <h2 className="text-[28px] sm:text-[34px] lg:text-[42px] font-extrabold text-gray-900 tracking-tight leading-tight mb-4">

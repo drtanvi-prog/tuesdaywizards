@@ -276,7 +276,7 @@ export default function WhyChooseSection() {
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
               <Button
                 as="a"
-                href="https://calendly.com/tuesdaywizard/30minutestrategy?month=2026-04"
+                href="https://calendly.com/tuesdaywizard/30minutestrategy"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="primary"
