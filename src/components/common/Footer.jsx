@@ -139,9 +139,9 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
 
           {/* Col 1 — Brand */}
-          <div className="col-span-2 lg:col-span-1">
-            <img src={logo} alt="Tuesday Wizard" className="h-13 w-auto object-contain mb-3" />
-            <p className="text-[12.5px] leading-[1.75]" style={{ color: 'rgba(255,255,255,0.35)' }}>
+          <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
+            <img src={logo} alt="Tuesday Wizard" className="h-13 w-auto object-contain mb-3 mx-auto lg:mx-0" />
+            <p className="text-[12.5px] leading-[1.75] text-center lg:text-left" style={{ color: 'rgba(255,255,255,0.35)' }}>
               Your trusted monday.com Certified Partner — automating workflows and helping teams work smarter.
             </p>
           </div>
