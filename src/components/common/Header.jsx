@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
 import logo from '../../assets/logo.png'
 import Button from '../ui/Button';
@@ -14,6 +14,7 @@ const navLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const headerRef = useRef(null);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
@@ -43,8 +44,20 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    function handleClickOutside(e) {
+      if (headerRef.current && !headerRef.current.contains(e.target)) {
+        setMobileOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [mobileOpen]);
+
   return (
     <header
+      ref={headerRef}
       className="font-sans sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.06)] transition-all duration-300"
     >
       <div className="max-w-[1320px] mx-auto px-6 xl:px-12">
