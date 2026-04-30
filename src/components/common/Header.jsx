@@ -77,8 +77,15 @@ export default function Header() {
 
           {/* ── Logo ── */}
           <a
-            href={isHome ? '#' : '/'}
-            onClick={e => { if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) } }}
+            href="#"
+            onClick={e => {
+              e.preventDefault();
+              if (isHome) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              } else {
+                navigate('/');
+              }
+            }}
             className="shrink-0"
           >
             <img src={logo} alt="Tuesday Wizard" className="h-10 lg:h-13 w-auto object-contain" />
