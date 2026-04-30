@@ -9,9 +9,12 @@ const Para = ({ children }) => (
 )
 
 const Bullets = ({ items }) => (
-  <ul className="mb-3 flex flex-col gap-1.5 pl-4 list-disc">
+  <ul className="mb-3 flex flex-col gap-1.5 pl-1">
     {items.map((item, i) => (
-      <li key={i} className="text-[13.5px] text-gray-700 leading-relaxed">{item}</li>
+      <li key={i} className="flex items-start gap-2 text-[13.5px] text-gray-700 leading-relaxed">
+        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0" />
+        <span>{item}</span>
+      </li>
     ))}
   </ul>
 )
