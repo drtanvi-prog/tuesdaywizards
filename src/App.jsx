@@ -1,33 +1,35 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import useSmoothScroll from './hooks/useSmoothScroll'
 import Header from './components/common/Header'
-import HeroSection from './components/sections/HeroSection'
-import ServicesSection from './components/sections/ServicesSection'
-import WhyChooseSection from './components/sections/WhyChooseSection'
-import TeamSection from './components/team/TeamSection'
-import CertificationsSection from './components/sections/CertificationsSection'
-import IntegrationsSection from './components/sections/IntegrationsSection'
-import PortfolioSection from './components/sections/PortfolioSection'
-import TestimonialsSection from './components/sections/TestimonialsSection'
 import Footer from './components/common/Footer'
+import ScrollToTop from './components/common/ScrollToTop'
+import Home from './pages/Home'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsAndConditions from './pages/TermsAndConditions'
 
-const App = () => {
+function MainLayout() {
   useSmoothScroll()
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <HeroSection />
-      <ServicesSection />
-      <TeamSection />
-      <CertificationsSection />
-      <WhyChooseSection />
-      <IntegrationsSection />
-      <TestimonialsSection />
-      <PortfolioSection />
+      <Outlet />
       <Footer />
     </div>
   )
 }
+
+const App = () => (
+  <BrowserRouter>
+    <ScrollToTop />
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/tc" element={<TermsAndConditions />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
+)
 
 export default App

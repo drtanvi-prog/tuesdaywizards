@@ -1,15 +1,21 @@
 import { useState } from 'react'
 import { TEAM } from '../../data/teamData'
 
-function Avatar({ member, className = '', style = {} }) {
+function Avatar({ member }) {
   if (member.photo) {
-    return <img src={member.photo} alt={member.name} className={className}
-      style={{ objectFit: 'cover', objectPosition: 'center top', ...style }} />
+    return (
+      <img
+        src={member.photo}
+        alt={member.name}
+        className="absolute inset-0 w-full h-full"
+        style={{ objectFit: 'cover', objectPosition: 'center top', borderRadius: 0 }}
+      />
+    )
   }
   return (
     <div
-      className={`flex items-center justify-center font-black text-white select-none ${className}`}
-      style={{ background: member.color, fontSize: '2.8rem', letterSpacing: '0.02em', ...style }}
+      className="absolute inset-0 flex items-center justify-center font-black text-white select-none"
+      style={{ background: member.color, fontSize: '2.8rem', letterSpacing: '0.02em' }}
     >
       {member.initials}
     </div>
@@ -23,7 +29,7 @@ const LinkedInIcon = () => (
 )
 
 export default function TeamSection() {
-  const [hoveredId, setHoveredId] = useState(null)
+  const [flippedId, setFlippedId] = useState(null)
 
   return (
     <section id="about" className="py-20 lg:py-28 font-sans" style={{ background: '#ffffff' }}>
@@ -44,56 +50,68 @@ export default function TeamSection() {
 
         {/* Cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {TEAM.map(m => {
-            const hovered = hoveredId === m.id
-            return (
+          {TEAM.map(m => (
+            <div
+              key={m.id}
+              style={{ height: 360, perspective: '1000px' }}
+              onMouseEnter={() => setFlippedId(m.id)}
+              onMouseLeave={() => setFlippedId(null)}
+            >
+              {/* Flip inner */}
               <div
-                key={m.id}
-                className="relative overflow-hidden rounded-2xl cursor-default"
-                style={{ height: 360 }}
-                onMouseEnter={() => setHoveredId(m.id)}
-                onMouseLeave={() => setHoveredId(null)}
+                className="relative w-full h-full rounded-2xl"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'transform 0.6s cubic-bezier(0.4,0.2,0.2,1)',
+                  transform: flippedId === m.id ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                }}
               >
-                {/* Photo / Avatar */}
-                <Avatar member={m} className="absolute inset-0 w-full h-full" style={{ borderRadius: 0 }} />
-
-                {/* Base gradient — always visible */}
+                {/* ── Front face ── */}
                 <div
-                  className="absolute inset-0 transition-opacity duration-300"
-                  style={{
-                    background: 'linear-gradient(to top, rgba(10,8,28,0.75) 0%, rgba(10,8,28,0.1) 45%, transparent 100%)',
-                  }}
-                />
-
-                {/* Resting state — name only */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 px-5 pb-5 transition-all duration-300"
-                  style={{ opacity: hovered ? 0 : 1, transform: hovered ? 'translateY(4px)' : 'translateY(0)' }}
+                  className="absolute inset-0 rounded-2xl overflow-hidden"
+                  style={{ backfaceVisibility: 'hidden' }}
                 >
-                  <p className="text-white font-extrabold text-[16px] leading-tight">{m.name}</p>
-                  <p className="text-[12px] mt-0.5" style={{ color: m.colorLight }}>{m.shortRole}</p>
+                  <Avatar member={m} />
+                  {/* Name label at bottom */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(10,8,28,0.75) 0%, rgba(10,8,28,0.1) 45%, transparent 100%)',
+                    }}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 px-5 pb-5">
+                    {m.name && (
+                      <p className="text-white font-extrabold text-[16px] leading-tight">{m.name}</p>
+                    )}
+                    <p className="text-[12px] mt-0.5" style={{ color: m.colorLight }}>{m.shortRole}</p>
+                  </div>
                 </div>
 
-                {/* Hover reveal panel */}
+                {/* ── Back face ── */}
                 <div
-                  className="absolute inset-0 flex flex-col justify-end px-5 pb-5 transition-all duration-300"
+                  className="absolute inset-0 rounded-2xl overflow-hidden flex flex-col justify-between p-6"
                   style={{
-                    background: `linear-gradient(to top, ${m.color}ee 0%, ${m.color}99 40%, transparent 100%)`,
-                    opacity:    hovered ? 1 : 0,
-                    transform:  hovered ? 'translateY(0)' : 'translateY(8px)',
+                    backfaceVisibility: 'hidden',
+                    transform: 'rotateY(180deg)',
+                    background: 'linear-gradient(135deg, #7c3aed 0%, #6d28d9cc 100%)',
                   }}
                 >
-                  <p className="text-white font-extrabold text-[16px] leading-tight mb-1">{m.name}</p>
-                  <p className="text-[11px] font-semibold mb-3" style={{ color: 'rgba(255,255,255,0.75)' }}>{m.role}</p>
-                  <p className="text-[12px] leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                    {m.bio}
-                  </p>
+                  <div className="flex-1 overflow-hidden flex flex-col justify-center gap-3">
+                    {m.name && (
+                      <p className="text-white font-extrabold text-[18px] leading-tight">{m.name}</p>
+                    )}
+                    <p className="text-[12px] font-semibold" style={{ color: 'rgba(255,255,255,0.8)' }}>{m.role}</p>
+                    <div className="w-10 h-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.4)' }} />
+                    <p className="text-[12px] leading-relaxed" style={{ color: 'rgba(255,255,255,0.88)', display: '-webkit-box', WebkitLineClamp: 7, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      {m.bio}
+                    </p>
+                  </div>
                   {m.linkedin && (
                     <a
                       href={m.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[12px] font-semibold text-white"
+                      className="inline-flex items-center gap-2 text-[12px] font-semibold text-white mt-4"
                       style={{ width: 'fit-content' }}
                     >
                       <LinkedInIcon /> Connect on LinkedIn
@@ -101,8 +119,8 @@ export default function TeamSection() {
                   )}
                 </div>
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
 
       </div>

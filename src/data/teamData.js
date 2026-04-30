@@ -6,6 +6,10 @@ import team5 from '../assets/teams/team5.jpeg'
 import team6 from '../assets/teams/team6.jpeg'
 import team7 from '../assets/teams/team7.png'
 import team8 from '../assets/teams/team8.png'
+import team9 from '../assets/teams/team9.png'
+import team10 from '../assets/teams/team10.png'
+import team11 from '../assets/teams/team11.png'
+import team12 from '../assets/teams/team12.png'
 
 export const TEAM = [
   {
@@ -95,5 +99,49 @@ export const TEAM = [
     stat: 'Multi', statLabel: 'Industry Exp.',
     initials: 'AP', color: '#0891b2', colorLight: '#e0f2fe',
     photo: team8, linkedin: null,
+  },
+  {
+    id: 'bilal',
+    name: 'Bilal Khan',
+    role: 'Senior Implementation Manager',
+    shortRole: 'Implementation',
+    specialty: 'CRM & Automation Systems',
+    bio: 'Bilal Khan is a Senior Implementation Manager who specializes in building smart, scalable automation systems that eliminate manual work and bring clarity to operations. With deep expertise in Monday.com, he designs end-to-end workflows that connect teams, automate repetitive tasks, streamline client onboarding, and turn complex processes into structured, trackable systems. From CRM builds and sales pipelines to advanced integrations using Zapier and Make, his approach combines technical precision with business strategy ensuring every automation saves time, increases visibility, and drives measurable performance.',
+    stat: 'Multi', statLabel: 'Industry Exp.',
+    initials: 'BK', color: '#d97706', colorLight: '#fef3c7',
+    photo: team9, linkedin: 'https://www.linkedin.com/in/muhammad-b-8bb911390/',
+  },
+  {
+    id: 'oyedokun',
+    name: 'Oyedokun Bibitayo Oyefunke',
+    role: 'Monday.com Implementation Architect',
+    shortRole: 'Implementation',
+    specialty: 'CRM Design & Workflow Automation',
+    bio: 'Oyedokun Bibitayo Oyefunke is a Monday.com Implementation Architect specializing in CRM design and workflow automation. She builds scalable, no-code systems that streamline operations, reduce manual work, and improve team visibility. Using Monday.com alongside tools like Make and Zapier, she leads end-to-end implementations that transform complex processes into structured, high-performing workflows. Her focus is on building reliable systems that teams can adopt easily and scale with confidence.',
+    stat: 'Multi', statLabel: 'Industry Exp.',
+    initials: 'OO', color: '#059669', colorLight: '#d1fae5',
+    photo: team10, linkedin: 'https://www.linkedin.com/in/oyedokun-bibitayo',
+  },
+  {
+    id: 'content-expert',
+    name: 'Murtaza Ali Kazmi',
+    role: 'Content & Marketing Expert',
+    shortRole: 'Content & Marketing',
+    specialty: 'Social Media & LinkedIn',
+    bio: '5 years of experience in content creation and marketing expert across social media and LinkedIn. Specializes in building authority-driven content that educates and converts. Focused on clarity, consistency, and audience-first strategy.',
+    stat: '5+', statLabel: 'Years Exp.',
+    initials: 'CM', color: '#db2777', colorLight: '#fce7f3',
+    photo: team11, linkedin: 'https://www.linkedin.com/in/murtazaali128',
+  },
+  {
+    id: 'amarachi',
+    name: 'Amarachi Ene',
+    role: 'Monday.com Implementation Manager, Business Operations & Automation Specialist',
+    shortRole: 'Implementation',
+    specialty: 'Business Operations & Automation',
+    bio: 'Amarachi is a Monday.com Implementation Manager, Business Operations and Automation Specialist who helps businesses turn Monday.com into more than just a tool. She designs structured, personalized, and efficient systems that simplify workflows, solve real operational problems, and deliver results that help teams run more smoothly and scale with confidence.',
+    stat: 'Multi', statLabel: 'Industry Exp.',
+    initials: 'AM', color: '#7c3aed', colorLight: '#ede9fe',
+    photo: team12, linkedin: 'https://www.linkedin.com/in/amarachi-ene',
   },
 ]

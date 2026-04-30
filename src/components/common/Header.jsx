@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import logo from '../../assets/logo.png'
 import Button from '../ui/Button';
@@ -15,6 +16,17 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const headerRef = useRef(null);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const isHome = pathname === '/';
+
+  const handleNavClick = (e, link) => {
+    if (!isHome) {
+      e.preventDefault();
+      const sectionId = link.href.replace('#', '');
+      navigate('/', { state: { scrollTo: sectionId } });
+    }
+  };
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
@@ -60,13 +72,13 @@ export default function Header() {
       ref={headerRef}
       className="font-sans sticky top-0 z-50 w-full bg-white border-b border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.06)] transition-all duration-300"
     >
-      <div className="max-w-[1320px] mx-auto px-6 xl:px-12">
+      <div className="max-w-330 mx-auto px-6 xl:px-12">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* ── Logo ── */}
           <a
-            href="#"
-            onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+            href={isHome ? '#' : '/'}
+            onClick={e => { if (isHome) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) } }}
             className="shrink-0"
           >
             <img src={logo} alt="Tuesday Wizard" className="h-10 lg:h-13 w-auto object-contain" />
@@ -76,11 +88,12 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const sectionId = link.href.replace('#', '');
-              const isActive = activeSection === sectionId || (activeSection === '' && link.href === '#');
+              const isActive = isHome && (activeSection === sectionId || (activeSection === '' && link.href === '#'));
               return (
                 <a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link)}
                   target={link.target}
                   rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
                   className={
@@ -145,14 +158,14 @@ export default function Header() {
           <div className="flex flex-col">
             {navLinks.map((link) => {
               const sectionId = link.href.replace('#', '');
-              const isActive = activeSection === sectionId || (activeSection === '' && link.href === '#');
+              const isActive = isHome && (activeSection === sectionId || (activeSection === '' && link.href === '#'));
               return (
                 <a
                   key={link.label}
                   href={link.href}
+                  onClick={(e) => { handleNavClick(e, link); setMobileOpen(false); }}
                   target={link.target}
                   rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
-                  onClick={() => setMobileOpen(false)}
                   className={
                     `py-3.5 text-[15px] font-medium border-b border-gray-50 transition-colors ` +
                     (isActive

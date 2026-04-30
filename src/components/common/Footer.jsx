@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo-without-bg.png'
 import Button from '../ui/Button'
 import { Mail, Calendar } from 'lucide-react'
@@ -205,20 +206,19 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-5">
             {[
-              { label: 'Privacy Policy', href: 'https://www.mondaywizard.com/privacy-policy', external: true },
-              { label: 'Terms of Service', href: '#', external: false },
+              { label: 'Privacy Policy', to: '/privacy-policy' },
+              { label: 'Terms & Conditions', to: '/tc' },
             ].map(t => (
-              <a
+              <Link
                 key={t.label}
-                href={t.href}
-                {...(t.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                to={t.to}
                 className="text-[11.5px] transition-colors duration-150"
                 style={{ color: 'rgba(255,255,255,0.22)' }}
                 onMouseEnter={e => e.currentTarget.style.color = '#c084fc'}
                 onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.22)'}
               >
                 {t.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
