@@ -65,7 +65,7 @@ export default function IntegrationsSection() {
           <p className="text-[14px] sm:text-[15px] text-gray-600 leading-[1.85] max-w-2xl mx-auto">
             For more advanced automation scenarios at Tuesday Wizard, we empower your business by
             integrating and automating workflows across the leading platforms you rely on every day.
-            Our expertise spans monday.com, Zapier, Make, Google Sheets, Slack, and more — helping
+            Our expertise spans monday.com, Zapier, Make, Google Sheets, Slack, and more - helping
             you streamline processes, reduce manual tasks, and boost productivity.
           </p>
         </div>

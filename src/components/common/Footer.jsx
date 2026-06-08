@@ -1,7 +1,6 @@
 
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo-without-bg.png'
-import Button from '../ui/Button'
 import { Mail, Calendar } from 'lucide-react'
 
 const QUICK_LINKS = [
@@ -58,83 +57,6 @@ export default function Footer() {
         }}
       />
 
-      {/* ── CTA Band ── */}
-      <div
-        className="relative border-b"
-        style={{ borderColor: 'rgba(255,255,255,0.07)' }}
-      >
-        <div className="max-w-330 mx-auto px-6 xl:px-12 py-10 lg:py-12 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-
-          {/* Left: text */}
-          <div className="max-w-xl">
-            <p className="text-[10.5px] font-bold uppercase tracking-[0.22em] text-purple-400 mb-2">
-              Get Started Today
-            </p>
-            <h2 className="text-[22px] sm:text-[26px] lg:text-[30px] font-extrabold text-white tracking-tight leading-tight mb-3">
-              Unleash Your{' '}
-              <span style={{
-                background: 'linear-gradient(125deg, #a78bfa 0%, #c084fc 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>
-                Business Potential
-              </span>
-            </h2>
-            <p className="text-[13px] leading-[1.75] mb-2" style={{ color: 'rgba(255,255,255,0.48)' }}>
-              Discover how to streamline your workflows, eliminate repetitive tasks,
-              and take full control of your business operations using monday.com.
-            </p>
-            <p className="text-[12.5px] leading-[1.75]" style={{ color: 'rgba(255,255,255,0.34)' }}>
-              Whether you're just starting out or ready to supercharge your monday.com setup,{' '}
-              <span className="font-semibold" style={{ color: 'rgba(255,255,255,0.55)' }}>Tuesday Wizard</span>{' '}
-              is your ultimate partner. From project management to CRM and beyond, Tuesday Wizard makes
-              complexity simple, automation effortless, and growth inevitable.
-              Ready to unlock the full power of monday.com?
-            </p>
-          </div>
-
-          {/* Right: buttons + email */}
-          <div className="flex flex-col gap-4 shrink-0">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button
-                as="a"
-                href="https://calendly.com/tuesdaywizard/30minutestrategy"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="primary"
-                className="text-[13.5px] px-6 justify-center text-center sm:text-left"
-              >
-                <span className="block text-center sm:text-left">Claim Your Free Consultation</span>
-              </Button>
-              <Button
-                as="a"
-                href="https://monday.com/?utm_campaign=partnerstack&utm_medium=diddly2965&utm_source=partner&pscd=try.monday.com&ps_partner_key=ZGlkZGx5Mjk2NQ&ps_xid=5Bm7mq2GklTTcI&gsxid=5Bm7mq2GklTTcI&gspk=ZGlkZGx5Mjk2NQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="outline"
-                className="text-[13.5px] px-6 justify-center text-center sm:text-left"
-              >
-                <span className="block text-center sm:text-left">Sign Up For a Free Trial</span>
-              </Button>
-            </div>
-            <p className="text-[12px]" style={{ color: 'rgba(255,255,255,0.28)' }}>
-              Send us an email:{' '}
-              <a
-                href="mailto:drtanvi@tuesdaywizards.com"
-                className="transition-colors duration-150"
-                style={{ color: 'rgba(192,132,252,0.7)' }}
-                onMouseEnter={e => e.currentTarget.style.color = '#c084fc'}
-                onMouseLeave={e => e.currentTarget.style.color = 'rgba(192,132,252,0.7)'}
-              >
-                drtanvi@tuesdaywizards.com
-              </a>
-            </p>
-          </div>
-
-        </div>
-      </div>
-
       {/* ── Main grid ── */}
       <div className="relative max-w-330 mx-auto px-6 xl:px-12 py-10 lg:py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
@@ -143,7 +65,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
             <img src={logo} alt="Tuesday Wizard" className="h-13 w-auto object-contain mb-3 mx-auto lg:mx-0" />
             <p className="text-[12.5px] leading-[1.75] text-center lg:text-left" style={{ color: 'rgba(255,255,255,0.35)' }}>
-              Your trusted monday.com Certified Partner — automating workflows and helping teams work smarter.
+              Your trusted monday.com Certified Partner - automating workflows and helping teams work smarter.
             </p>
           </div>
 

@@ -7,18 +7,22 @@ import WhyChooseSection from '../components/sections/WhyChooseSection'
 import IntegrationsSection from '../components/sections/IntegrationsSection'
 import TestimonialsSection from '../components/sections/TestimonialsSection'
 import PortfolioSection from '../components/sections/PortfolioSection'
+import PartnersSection from '../components/sections/PartnersSection'
+import ContactSection from '../components/sections/ContactSection'
 
 const Home = () => {
    return (
       <>
          <HeroSection />
          <ServicesSection />
+         <PartnersSection/>
          <TeamSection />
          <CertificationsSection />
          <WhyChooseSection />
          <IntegrationsSection />
          <TestimonialsSection />
          <PortfolioSection />
+         <ContactSection />
       </>
    )
 }

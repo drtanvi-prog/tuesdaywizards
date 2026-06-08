@@ -19,7 +19,7 @@ export const SERVICES = [
     label:   'Workspace Setup',
     tagline: 'Tailored monday.com environments',
     title:   'Monday.com Workspace Setup & Customization',
-    desc:    'We design and build tailored monday.com workspaces that match your exact business workflows — from project tracking and CRM to HR and operations. Every board, column, and permission is built for your team.',
+    desc:    'We design and build tailored monday.com workspaces that match your exact business workflows - from project tracking and CRM to HR and operations. Every board, column, and permission is built for your team.',
     features: [
       'Custom board architecture & column setup',
       'Automated status triggers & notifications',
@@ -34,7 +34,7 @@ export const SERVICES = [
     label:   'Workflow Automation',
     tagline: 'Eliminate repetitive manual work',
     title:   'Workflow Automation & Optimization',
-    desc:    'We build smart automations inside monday.com that cut manual work, reduce errors, and keep your team focused. From simple triggers to complex multi-step flows — we handle every detail.',
+    desc:    'We build smart automations inside monday.com that cut manual work, reduce errors, and keep your team focused. From simple triggers to complex multi-step flows - we handle every detail.',
     features: [
       'Cross-board automation rules & triggers',
       'Slack, email & calendar auto-notifications',
@@ -49,7 +49,7 @@ export const SERVICES = [
     label:   'Third-Party Integrations',
     tagline: 'Connect all your tools seamlessly',
     title:   'Third-Party Integrations & API Solutions',
-    desc:    'We connect monday.com to every tool your team uses — via native integrations, Zapier, Make, n8n, or fully custom API development. One source of truth, zero data silos.',
+    desc:    'We connect monday.com to every tool your team uses - via native integrations, Zapier, Make, n8n, or fully custom API development. One source of truth, zero data silos.',
     features: [
       'Google Workspace, Slack & Microsoft 365',
       'Zapier, Make & n8n automation flows',
@@ -77,7 +77,7 @@ export const SERVICES = [
     label:   'CRM Solutions',
     tagline: 'Sales pipelines built to convert',
     title:   'Monday.com CRM Setup & Optimization',
-    desc:    'We configure monday CRM so your sales team gets complete pipeline visibility — from first contact to closed deal. Track leads, automate follow-ups, and close more with a system built around your process.',
+    desc:    'We configure monday CRM so your sales team gets complete pipeline visibility - from first contact to closed deal. Track leads, automate follow-ups, and close more with a system built around your process.',
     features: [
       'Lead capture & pipeline stage design',
       'Contact, deal & activity management',

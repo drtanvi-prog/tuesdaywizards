@@ -1,43 +1,46 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
-import logo from '../../assets/logo.png'
-import Button from '../ui/Button';
+import React, { useState, useEffect, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import Button from "../ui/Button";
+import { FaLinkedin, FaSquareUpwork } from "react-icons/fa6";
+import { Menu } from "lucide-react";
 
 const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' },
-]
+  { label: "Services", href: "#services" },
+  { label: "About Us", href: "#about" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
   const headerRef = useRef(null);
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const isHome = pathname === '/';
+  const isHome = pathname === "/";
 
   const handleNavClick = (e, link) => {
     if (!isHome) {
       e.preventDefault();
-      const sectionId = link.href.replace('#', '');
-      navigate('/', { state: { scrollTo: sectionId } });
+      const sectionId = link.href.replace("#", "");
+      navigate("/", { state: { scrollTo: sectionId } });
     }
   };
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = '' };
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   // Scrollspy effect
   useEffect(() => {
-    const sectionIds = navLinks.map(l => l.href.replace('#', ''));
+    const sectionIds = navLinks.map((l) => l.href.replace("#", ""));
     function onScroll() {
-      let found = '';
+      let found = "";
       for (let i = 0; i < sectionIds.length; i++) {
         const el = document.getElementById(sectionIds[i]);
         if (el) {
@@ -51,9 +54,9 @@ export default function Header() {
       }
       setActiveSection(found);
     }
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -63,8 +66,8 @@ export default function Header() {
         setMobileOpen(false);
       }
     }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [mobileOpen]);
 
   return (
@@ -74,42 +77,50 @@ export default function Header() {
     >
       <div className="max-w-330 mx-auto px-6 xl:px-12">
         <div className="flex items-center justify-between h-16 lg:h-20">
-
           {/* ── Logo ── */}
           <a
             href="#"
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
               if (isHome) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: "smooth" });
               } else {
-                navigate('/');
+                navigate("/");
               }
             }}
             className="shrink-0"
           >
-            <img src={logo} alt="Tuesday Wizard" className="h-10 lg:h-13 w-auto object-contain" />
+            <img
+              src={logo}
+              alt="Tuesday Wizard"
+              className="h-10 lg:h-13 w-auto object-contain"
+            />
           </a>
 
           {/* ── Desktop Nav ── */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
-              const sectionId = link.href.replace('#', '');
-              const isActive = isHome && (activeSection === sectionId || (activeSection === '' && link.href === '#'));
+              const sectionId = link.href.replace("#", "");
+              const isActive =
+                isHome &&
+                (activeSection === sectionId ||
+                  (activeSection === "" && link.href === "#"));
               return (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
                   target={link.target}
-                  rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+                  rel={
+                    link.target === "_blank" ? "noopener noreferrer" : undefined
+                  }
                   className={
                     `relative px-4 py-2 text-[14.5px] font-medium rounded-lg transition-all duration-150 ` +
                     (isActive
-                      ? 'text-purple-700 bg-purple-50/60'
-                      : 'text-gray-600 hover:text-purple-700 hover:bg-purple-50/60')
+                      ? "text-purple-700 bg-purple-50/60"
+                      : "text-gray-600 hover:text-purple-700 hover:bg-purple-50/60")
                   }
-                // No bold for active nav, match hover style
+                  // No bold for active nav, match hover style
                 >
                   {link.label}
                 </a>
@@ -118,27 +129,91 @@ export default function Header() {
           </nav>
 
           {/* ── Desktop CTAs ── */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button
-              as="a"
-              href="https://calendly.com/tuesdaywizard/30minutestrategy"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="primary"
-              className="relative text-[13.5px]"
-            >
-              Book Free Consult
-            </Button>
-            <Button
-              as="a"
-              href="https://monday.com/?utm_campaign=partnerstack&utm_medium=diddly2965&utm_source=partner&pscd=try.monday.com&ps_partner_key=ZGlkZGx5Mjk2NQ&ps_xid=5Bm7mq2GklTTcI&gsxid=5Bm7mq2GklTTcI&gspk=ZGlkZGx5Mjk2NQ"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="outline"
-              className="text-[13.5px]"
-            >
-              Sign Up For Free Trial
-            </Button>
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.linkedin.com/company/tuesdaywizard"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="
+                      group
+                      flex items-center justify-center
+                      w-10 h-10
+                      rounded-full
+                      border border-gray-200
+                      bg-white
+                      text-gray-600
+                      transition-all duration-300
+                      hover:border-[#0A66C2]
+                      hover:text-[#0A66C2]
+                      hover:-translate-y-1
+                      hover:shadow-md
+                    "
+              >
+                <FaLinkedin
+                  className="
+                      text-[18px]
+                      transition-transform duration-300
+                      group-hover:scale-110
+                    "
+                />
+              </a>
+
+              <a
+                href="https://www.upwork.com/agencies/2008961979613099238/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Upwork"
+                className="
+                      group
+                      flex items-center justify-center
+                      w-10 h-10
+                      rounded-full
+                      border border-gray-200
+                      bg-white
+                      text-gray-600
+                      transition-all duration-300
+                      hover:border-[#14A800]
+                      hover:text-[#14A800]
+                      hover:-translate-y-1
+                      hover:shadow-md
+                    "
+              >
+                <FaSquareUpwork
+                  className="
+                      text-[18px]
+                      transition-transform duration-300
+                      group-hover:scale-110
+                    "
+                />
+              </a>
+            </div>
+
+            {/* CTA Buttons */}
+            {/* <div className="flex items-center gap-3">
+              <Button
+                as="a"
+                href="https://calendly.com/tuesdaywizard/30minutestrategy"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="primary"
+                className="text-[13.5px]"
+              >
+                Book Free Consult
+              </Button>
+
+              <Button
+                as="a"
+                href="https://monday.com/?utm_campaign=partnerstack&utm_medium=diddly2965&utm_source=partner&pscd=try.monday.com&ps_partner_key=ZGlkZGx5Mjk2NQ&ps_xid=5Bm7mq2GklTTcI&gsxid=5Bm7mq2GklTTcI&gspk=ZGlkZGx5Mjk2NQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                className="text-[13.5px]"
+              >
+                Sign Up For Free Trial
+              </Button>
+            </div> */}
           </div>
 
           {/* ── Mobile Toggle ── */}
@@ -147,39 +222,47 @@ export default function Header() {
             className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl text-gray-600 hover:text-purple-700 hover:bg-purple-50 cursor-pointer transition-all duration-150"
             aria-label="Toggle menu"
           >
-            {mobileOpen
-              ? <X className="w-6 h-6" strokeWidth={2} />
-              : <Menu className="w-6 h-6" strokeWidth={2} />
-            }
+            {mobileOpen ? (
+              <X className="w-6 h-6" strokeWidth={2} />
+            ) : (
+              <Menu className="w-6 h-6" strokeWidth={2} />
+            )}
           </button>
         </div>
       </div>
 
       {/* ── Mobile Drawer ── */}
       <div
-        className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${mobileOpen ? 'max-h-175 opacity-100' : 'max-h-0 opacity-0'}`}
+        className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${mobileOpen ? "max-h-175 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <div className="bg-white border-t border-gray-100 px-5 pt-3 pb-6">
-
           {/* Nav links */}
           <div className="flex flex-col">
             {navLinks.map((link) => {
-              const sectionId = link.href.replace('#', '');
-              const isActive = isHome && (activeSection === sectionId || (activeSection === '' && link.href === '#'));
+              const sectionId = link.href.replace("#", "");
+              const isActive =
+                isHome &&
+                (activeSection === sectionId ||
+                  (activeSection === "" && link.href === "#"));
               return (
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={(e) => { handleNavClick(e, link); setMobileOpen(false); }}
+                  onClick={(e) => {
+                    handleNavClick(e, link);
+                    setMobileOpen(false);
+                  }}
                   target={link.target}
-                  rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+                  rel={
+                    link.target === "_blank" ? "noopener noreferrer" : undefined
+                  }
                   className={
                     `py-3.5 text-[15px] font-medium border-b border-gray-50 transition-colors ` +
                     (isActive
-                      ? 'text-purple-700'
-                      : 'text-gray-700 hover:text-purple-700')
+                      ? "text-purple-700"
+                      : "text-gray-700 hover:text-purple-700")
                   }
-                // No bold or background for active nav
+                  // No bold or background for active nav
                 >
                   {link.label}
                 </a>
