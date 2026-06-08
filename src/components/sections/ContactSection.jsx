@@ -1,6 +1,6 @@
 import mondayLogo from "../../assets/partners/monday.webp";
 import makeLogo from "../../assets/partners/make.webp";
-import workiflowLogo from "../../assets/logo-without-bg.png";
+import zapierLogo from "../../assets/partners/zapier.webp";
 
 const checks = [
   "Discuss the best solution to meet your business goals",
@@ -96,8 +96,8 @@ export default function ContactSection() {
 
               {/* Partner logos */}
               <div className="flex items-center gap-6 flex-wrap">
-                <img src={workiflowLogo} alt="Tuesday Wizard" className="h-8 object-contain opacity-80" />
                 <img src={mondayLogo} alt="monday.com" className="h-6 object-contain opacity-80" />
+                <img src={zapierLogo} alt="Zapier" className="h-10 object-contain opacity-80" />
                 <img src={makeLogo} alt="Make" className="h-6 object-contain opacity-80" />
               </div>
             </div>
