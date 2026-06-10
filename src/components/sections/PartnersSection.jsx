@@ -12,6 +12,8 @@ import smithaiLogo from "../../assets/partners/smithai.webp";
 import ziflowLogo from "../../assets/partners/ziflow.webp";
 import frontLogo from "../../assets/partners/front.webp";
 import keragonLogo from "../../assets/partners/keragon.webp";
+import QuoLogo from "../../assets/partners/quo.png";
+import PandaDocLogo from "../../assets/partners/pandadoc.png";
 
 const partners = [
   {
@@ -43,20 +45,16 @@ const partners = [
     alt: "Calendly",
   },
   {
-    logo: docketwiseLogo,
-    alt: "Docketwise",
+    logo: QuoLogo,
+    alt: "Quo",
   },
   {
-    logo: lawpayLogo,
-    alt: "LawPay",
+    logo: PandaDocLogo,
+    alt: "PandaDoc",
   },
   {
     logo: smithaiLogo,
     alt: "Smith AI",
-  },
-  {
-    logo: ziflowLogo,
-    alt: "Ziflow",
   },
   {
     logo: frontLogo,

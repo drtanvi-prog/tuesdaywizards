@@ -42,7 +42,7 @@ const FEATURES = [
 ]
 
 const STATS = [
-  { to: 50,   suffix: '+', label: 'Projects Delivered'  },
+  { to: 120,   suffix: '+', label: 'Projects Delivered'  },
   { to: 1000, suffix: '+', label: 'Hours Billed'        },
   { to: 100,  suffix: '%', label: 'Client Satisfaction' },
 ]
