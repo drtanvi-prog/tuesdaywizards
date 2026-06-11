@@ -27,7 +27,7 @@ export default function ContactSection() {
         <div
           className="rounded-2xl p-8 sm:p-10 lg:p-12"
           style={{
-            background: "linear-gradient(135deg, #dbeafe 0%, #e0e7ff 40%, #ede9fe 70%, #f3e8ff 100%)",
+            background: "linear-gradient(135deg, #f3f0ff 0%, #ede9fe 40%, #e0d9fb 75%, #d4cafe 100%)",
           }}
         >
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
@@ -42,10 +42,10 @@ export default function ContactSection() {
                     <li key={item} className="flex items-start gap-3">
                       <span
                         className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ background: "rgba(99,102,241,0.15)" }}
+                        style={{ background: "rgba(124,58,237,0.12)" }}
                       >
                         <svg width="11" height="9" viewBox="0 0 11 9" fill="none">
-                          <path d="M1 4.5L4 7.5L10 1.5" stroke="#6366f1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M1 4.5L4 7.5L10 1.5" stroke="#7c3aed" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </span>
                       <span className="text-[14.5px] sm:text-[15px] text-[#1e293b] leading-snug">{item}</span>
@@ -56,7 +56,7 @@ export default function ContactSection() {
 
               <div>
                 <a
-                  href="https://calendly.com/tuesdaywizard/30minutestrategy"
+                  href="https://forms.monday.com/forms/e9217dad1b923df8774caf916e69e1a0?r=use1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-7 py-3 rounded-lg text-white text-[14px] font-semibold transition-opacity duration-150 hover:opacity-90"
@@ -79,18 +79,19 @@ export default function ContactSection() {
                   "
                 </span>
                 <div className="flex items-center gap-3 mb-3">
-                  <img
-                    src="https://randomuser.me/api/portraits/women/44.jpg"
-                    alt="Stefana Muller"
-                    className="w-10 h-10 rounded-full object-cover flex-shrink-0"
-                  />
+                  <div
+                    className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center text-white text-[13px] font-bold select-none"
+                    style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}
+                  >
+                    GM
+                  </div>
                   <div>
-                    <p className="text-[13px] font-semibold text-[#0f172a]">Stefana Muller</p>
-                    <p className="text-[11.5px] text-[#64748b]">Senior Director, CTO Product and Program Office | Oscar</p>
+                    <p className="text-[13px] font-semibold text-[#0f172a]">Gina Mondino</p>
+                    {/* <p className="text-[11.5px] text-[#64748b]">Senior Director, CTO Product and Program Office | Oscar</p> */}
                   </div>
                 </div>
                 <p className="text-[13px] text-[#374151] leading-relaxed">
-                  "monday.com Work OS saves us about 1,850 hrs of staff time and somewhere in the range of $50,000 a month."
+                  "I used Monday.com to help with my small business. They were able to help me build boards to help me organize my projects. They also helped automate some repetitive tasks and streamline my SOPs. It was a great experience, will use them again if needed in the future!"
                 </p>
               </div>
 

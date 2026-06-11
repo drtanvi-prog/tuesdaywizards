@@ -6,10 +6,7 @@ import docusignLogo from "../../assets/partners/docusign.webp";
 import stripeLogo from "../../assets/partners/stripe.webp";
 
 import calendlyLogo from "../../assets/partners/calendly.webp";
-import docketwiseLogo from "../../assets/partners/docketwise.webp";
-import lawpayLogo from "../../assets/partners/lawpay.webp";
 import smithaiLogo from "../../assets/partners/smithai.webp";
-import ziflowLogo from "../../assets/partners/ziflow.webp";
 import frontLogo from "../../assets/partners/front.webp";
 import keragonLogo from "../../assets/partners/keragon.webp";
 import QuoLogo from "../../assets/partners/quo.png";
