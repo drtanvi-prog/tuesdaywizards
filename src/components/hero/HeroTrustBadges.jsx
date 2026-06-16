@@ -5,11 +5,11 @@ export default function HeroTrustBadges() {
   return (
     <div className="flex flex-row items-center gap-3 sm:gap-5 pt-2">
 
-      {/* Mobile: smaller Trustpilot */}
+      {/* Mobile */}
       <div className="sm:hidden shrink-0">
         <TrustpilotWidget width="118px" height="80px" />
       </div>
-      {/* Desktop: full Trustpilot */}
+      {/* Desktop */}
       <div className="hidden sm:block shrink-0">
         <TrustpilotWidget width="160px" height="110px" />
       </div>

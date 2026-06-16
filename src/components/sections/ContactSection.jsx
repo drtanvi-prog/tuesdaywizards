@@ -1,4 +1,4 @@
-import mondayLogo from "../../assets/partners/monday.webp";
+import { MondayLogo } from "../common/Icons";
 import makeLogo from "../../assets/partners/make.webp";
 import zapierLogo from "../../assets/partners/zapier.webp";
 
@@ -97,7 +97,7 @@ export default function ContactSection() {
 
               {/* Partner logos */}
               <div className="flex items-center gap-6 flex-wrap">
-                <img src={mondayLogo} alt="monday.com" className="h-6 object-contain opacity-80" />
+                <MondayLogo className="h-6 w-auto opacity-80" />
                 <img src={zapierLogo} alt="Zapier" className="h-10 object-contain opacity-80" />
                 <img src={makeLogo} alt="Make" className="h-6 object-contain opacity-80" />
               </div>
