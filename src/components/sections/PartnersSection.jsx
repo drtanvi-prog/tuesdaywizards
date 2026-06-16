@@ -200,7 +200,7 @@ export default function PartnersSection() {
                   {/* Stats */}
                   <div className="flex items-center gap-6 pt-5 border-t border-[#f1f5f9]">
                     {[
-                      { num: '200+', label: 'Clients served' },
+                      { num: '15+', label: 'Clients served' },
                       { num: '4.5★', label: 'Trustpilot rating' },
                     ].map(s => (
                       <div key={s.label}>
