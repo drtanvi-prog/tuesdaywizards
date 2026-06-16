@@ -187,13 +187,6 @@ export default function PartnersSection() {
                 {/* Left — brand info */}
                 <div className="flex-shrink-0 lg:w-72">
                   <MondayLogo className="h-8 sm:h-9 w-auto object-contain mb-5" />
-                  <span
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold tracking-wide mb-5"
-                    style={{ background: "#fff7ed", color: "#c2410c" }}
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500 inline-block" />
-                    Authorized Platinum Partner
-                  </span>
                   <p className="text-[14px] text-[#64748b] leading-[1.7] mb-6">
                     Certified experts across all monday.com products - from core Work OS to the latest AI-native features.
                   </p>
