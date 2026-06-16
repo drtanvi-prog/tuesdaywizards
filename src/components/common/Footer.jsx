@@ -110,7 +110,7 @@ export default function Footer() {
                 </FooterLink>
               </li>
               <li>
-                <FooterLink href="https://www.upwork.com/agencies/tuesdaywizard/" external>
+                <FooterLink href="https://www.upwork.com/agencies/2008961979613099238/" external>
                   <UpworkIcon /> Find us on Upwork
                 </FooterLink>
               </li>

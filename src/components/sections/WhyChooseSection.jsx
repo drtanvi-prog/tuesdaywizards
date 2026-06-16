@@ -68,7 +68,7 @@ const CELL_BORDERS = [
 function UpworkButton() {
   return (
     <a
-      href="https://www.upwork.com/agencies/tuesdaywizard/"
+      href="https://www.upwork.com/agencies/2008961979613099238/"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto h-12 px-6 rounded-lg text-[14px] font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400"
