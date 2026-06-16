@@ -9,7 +9,6 @@ import mondayVibe      from '../../assets/monday/monday-vibe.png'
 import badgeMWM  from '../../assets/badges/MWM.svg'
 import badgeCRM  from '../../assets/badges/CRM.svg'
 import badgeDEV  from '../../assets/badges/DEV.svg'
-import badgeSVC  from '../../assets/badges/SVC.svg'
 
 /* integration logos */
 import slackLogo      from '../../assets/logos/slack.png'
@@ -127,7 +126,7 @@ export default function HeroMondayAgent() {
         {/* Glow */}
         <div style={{
           position:'absolute', width:260, height:260, borderRadius:'50%',
-          top:'50%', left:'50%', transform:'translate(-50%,-53%)',
+          top:'50%', left:'54%', transform:'translate(-50%,-53%)',
           background:'radial-gradient(ellipse,rgba(168,85,247,.18) 0%,rgba(99,102,241,.05) 55%,transparent 75%)',
           filter:'blur(40px)',
           animation:'gp 5s ease-in-out infinite',
@@ -136,7 +135,7 @@ export default function HeroMondayAgent() {
 
         {/* Robot */}
         <div ref={lottieRef} style={{
-          position:'absolute', width:200, height:200,
+          position:'absolute', width:300, height:300,
           top:'50%', left:'50%', transform:'translate(-50%,-52%)',
           zIndex:10,
         }} />
