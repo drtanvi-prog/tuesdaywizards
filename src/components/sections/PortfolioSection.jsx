@@ -123,7 +123,7 @@ export default function PortfolioSection() {
             <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
           </button>
 
-          {/* Dots — overlaid bottom center */}
+          {/* Dots - overlaid bottom center */}
           <div
             className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-3 py-2 rounded-full"
             style={{

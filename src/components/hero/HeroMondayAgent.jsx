@@ -140,7 +140,7 @@ export default function HeroMondayAgent() {
           zIndex:10,
         }} />
 
-        {/* ── LEFT — integration circles ── */}
+        {/* ── LEFT - integration circles ── */}
         <div className="ha-ico" style={{ top:82,  left:20, animation:an('a','0.2s','4.3s') }}>
           <img src={slackLogo} alt="Slack" />
         </div>
@@ -151,7 +151,7 @@ export default function HeroMondayAgent() {
           <img src={hubspotLogo} alt="HubSpot" />
         </div>
 
-        {/* ── LEFT — monday product squares ── */}
+        {/* ── LEFT - monday product squares ── */}
         <div className="ha-mon" style={{ top:152, left:84, animation:an('b','0.28s','4.8s') }}>
           <img src={mondayWorkflow} alt="monday WorkForms" />
         </div>
@@ -159,7 +159,7 @@ export default function HeroMondayAgent() {
           <img src={mondayVibe} alt="monday AI" />
         </div>
 
-        {/* ── RIGHT — integration circles ── */}
+        {/* ── RIGHT - integration circles ── */}
         <div className="ha-ico" style={{ top:82,  right:20, animation:an('b','0.25s','4.6s') }}>
           <img src={zapierLogo} alt="Zapier" />
         </div>
@@ -170,7 +170,7 @@ export default function HeroMondayAgent() {
           <img src={salesforceLogo} alt="Salesforce" style={{ borderRadius:5 }} />
         </div>
 
-        {/* ── RIGHT — monday product squares ── */}
+        {/* ── RIGHT - monday product squares ── */}
         <div className="ha-mon" style={{ top:152, right:84, animation:an('a','0.3s','4.4s') }}>
           <img src={mondaySidekick} alt="monday Sidekick" />
         </div>
@@ -178,7 +178,7 @@ export default function HeroMondayAgent() {
           <img src={mondayAgent} alt="monday Agent" />
         </div>
 
-        {/* ── TOP BADGE — MWM.svg ── */}
+        {/* ── TOP BADGE - MWM.svg ── */}
         <div className="ha-badge" style={{
           top:10, left:'50%', transform:'translateX(-50%)',
           animation: an('a','0.15s','4.5s'),
@@ -188,7 +188,7 @@ export default function HeroMondayAgent() {
             style={{ height:26, width:'auto', maxWidth:160, objectFit:'contain', display:'block' }} />
         </div>
 
-        {/* ── BOTTOM-LEFT BADGE — CRM.svg ── */}
+        {/* ── BOTTOM-LEFT BADGE - CRM.svg ── */}
         <div className="ha-badge" style={{
           bottom:12, left:20,
           animation: an('b','0.55s','4.6s'),
@@ -198,7 +198,7 @@ export default function HeroMondayAgent() {
             style={{ height:26, width:'auto', maxWidth:130, objectFit:'contain', display:'block' }} />
         </div>
 
-        {/* ── BOTTOM-RIGHT BADGE — DEV.svg ── */}
+        {/* ── BOTTOM-RIGHT BADGE - DEV.svg ── */}
         <div className="ha-badge" style={{
           bottom:12, right:20,
           animation: an('a','0.65s','4.3s'),

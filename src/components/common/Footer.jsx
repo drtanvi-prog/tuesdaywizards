@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import logo from '../../assets/logo-without-bg.png'
 import { Mail, Calendar } from 'lucide-react'
 
@@ -25,9 +25,23 @@ const UpworkIcon = () => (
 )
 
 function FooterLink({ href, children, external }) {
+  const navigate = useNavigate()
+
+  const handleClick = e => {
+    if (external || !href.startsWith('#')) return
+    e.preventDefault()
+    const section = href.replace('#', '')
+    if (window.location.pathname === '/') {
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      navigate('/', { state: { scrollTo: section } })
+    }
+  }
+
   return (
     <a
       href={href}
+      onClick={handleClick}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       className="flex items-center gap-2 text-[13px] transition-colors duration-150 whitespace-nowrap"
       style={{ color: 'rgba(255,255,255,0.46)' }}
@@ -61,7 +75,7 @@ export default function Footer() {
       <div className="relative max-w-330 mx-auto px-6 xl:px-12 py-10 lg:py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
 
-          {/* Col 1 — Brand */}
+          {/* Col 1 - Brand */}
           <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start">
             <img src={logo} alt="Tuesday Wizard" className="h-13 w-auto object-contain mb-3 mx-auto lg:mx-0" />
             <p className="text-[12.5px] leading-[1.75] text-center lg:text-left" style={{ color: 'rgba(255,255,255,0.35)' }}>
@@ -69,7 +83,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Col 2 — Quick Links */}
+          {/* Col 2 - Quick Links */}
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.26)' }}>
               Quick Links
@@ -81,7 +95,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3 — Services */}
+          {/* Col 3 - Services */}
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.26)' }}>
               Services
@@ -93,7 +107,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4 — Contact */}
+          {/* Col 4 - Contact */}
           <div className="col-span-2 lg:col-span-1">
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-4" style={{ color: 'rgba(255,255,255,0.26)' }}>
               Contact

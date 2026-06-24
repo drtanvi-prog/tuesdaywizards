@@ -55,9 +55,9 @@ const PRODUCTS = [
 ]
 
 // Border classes per item index across breakpoints:
-// mobile (1-col): border-b on 0,1,2 — none on 3
+// mobile (1-col): border-b on 0,1,2 - none on 3
 // sm (2-col):     border-r on left col (0,2), border-b on first row (0,1)
-// lg (4-col):     border-r on 0,1,2 — no border-b on any
+// lg (4-col):     border-r on 0,1,2 - no border-b on any
 const CELL_BORDERS = [
   'border-b sm:border-r lg:border-b-0',
   'border-b lg:border-r lg:border-b-0',

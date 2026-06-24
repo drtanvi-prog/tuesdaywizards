@@ -164,7 +164,7 @@ export default function PartnersSection() {
         {/* ── Featured partner cards ── */}
         <div className="grid grid-cols-1 gap-4 mb-4">
 
-          {/* Monday.com — full width card */}
+          {/* Monday.com - full width card */}
           <motion.div
             className="rounded-2xl overflow-hidden border border-[#e2e8f0] bg-white relative group"
             initial="hidden"
@@ -184,7 +184,7 @@ export default function PartnersSection() {
             <div className="p-8 sm:p-10">
               <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
 
-                {/* Left — brand info */}
+                {/* Left - brand info */}
                 <div className="flex-shrink-0 lg:w-72">
                   <MondayLogo className="h-8 sm:h-9 w-auto object-contain mb-5" />
                   <p className="text-[14px] text-[#64748b] leading-[1.7] mb-6">
@@ -207,7 +207,7 @@ export default function PartnersSection() {
                 {/* Divider */}
                 <div className="hidden lg:block w-px self-stretch bg-[#f1f5f9]" />
 
-                {/* Right — AI Products grid */}
+                {/* Right - AI Products grid */}
                 <div className="flex-1">
                   <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#94a3b8] mb-5">
                     monday.com AI Products
