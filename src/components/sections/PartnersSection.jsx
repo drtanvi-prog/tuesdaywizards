@@ -209,7 +209,7 @@ export default function PartnersSection() {
 
                 {/* Right - AI Products grid */}
                 <div className="flex-1">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#94a3b8] mb-5">
+                  <p className="text-[11px] font-bold tracking-[0.18em] text-[#94a3b8] mb-5">
                     monday.com AI Products
                   </p>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
