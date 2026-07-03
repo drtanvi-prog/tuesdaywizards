@@ -10,7 +10,7 @@ import TestimonialsSection from '../components/sections/TestimonialsSection'
 import PortfolioSection from '../components/sections/PortfolioSection'
 import PartnersSection from '../components/sections/PartnersSection'
 import ContactSection from '../components/sections/ContactSection'
-import WizCloneSection from '../components/sections/WizCloneSection'
+// import WizCloneSection from '../components/sections/WizCloneSection'
 
 const Home = () => {
   const { state } = useLocation()
@@ -34,7 +34,8 @@ const Home = () => {
       <IntegrationsSection />
       <TestimonialsSection />
       <PortfolioSection />
-      <WizCloneSection />
+      {/* WizClone section is temporarily hidden */}
+      {/* <WizCloneSection /> */}
       <ContactSection />
     </>
   )

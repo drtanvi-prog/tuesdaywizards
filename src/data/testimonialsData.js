@@ -15,7 +15,7 @@ export const TESTIMONIALS = [
     avatar: t1,
     color: "#7c3aed",
     quote:
-      "We're a small but busy family-owned ranch, and we didn't think Monday.com could work for agriculture… until Tuesday Wizard proved us wrong. They built an intuitive system for harvest planning, event scheduling, and vendor coordination. Their Zapier automations connected our email list, online shop, and calendar so we never miss a beat during peak season.",
+      "We're a small but busy family-owned ranch, and we didn't think monday.com could work for agriculture… until Tuesday Wizard proved us wrong. They built an intuitive system for harvest planning, event scheduling, and vendor coordination. Their Zapier automations connected our email list, online shop, and calendar so we never miss a beat during peak season.",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const TESTIMONIALS = [
     avatar: t7,
     color: "#2563eb",
     quote:
-      "Our practice was overwhelmed with fragmented task lists and manual follow-ups - until Tuesday Wizard stepped in. They created a custom Monday.com setup tailored to healthcare workflows, automating patient outreach tasks, managing contractor coordination, and ensuring HIPAA-compliant tracking. Their ability to automate reminders and integrate Google Calendar and forms was a game-changer for our administrative staff.",
+      "Our practice was overwhelmed with fragmented task lists and manual follow-ups - until Tuesday Wizard stepped in. They created a custom monday.com setup tailored to healthcare workflows, automating patient outreach tasks, managing contractor coordination, and ensuring HIPAA-compliant tracking. Their ability to automate reminders and integrate Google Calendar and forms was a game-changer for our administrative staff.",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const TESTIMONIALS = [
     avatar: t6,
     color: "#0891b2",
     quote:
-      "Partnering with Tuesday Wizard completely transformed our marketing operations. They built a sleek, custom Monday.com workspace that centralized campaign planning, content calendars, and cross-team communications. Their seamless Zapier integrations saved us countless hours by syncing our email platforms, social media tools, and CRM. We now have full visibility across every campaign and can move faster with greater confidence.",
+      "Partnering with Tuesday Wizard completely transformed our marketing operations. They built a sleek, custom monday.com workspace that centralized campaign planning, content calendars, and cross-team communications. Their seamless Zapier integrations saved us countless hours by syncing our email platforms, social media tools, and CRM. We now have full visibility across every campaign and can move faster with greater confidence.",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const TESTIMONIALS = [
     avatar: t5,
     color: "#0f766e",
     quote:
-      "We needed a solution to help us better manage stakeholder communications, content pipelines, and policy review processes. Tuesday Wizard built a fully customized system within Monday.com that keeps everything on track, from content creation to compliance deadlines. Their automations using Zapier have helped us increase accountability while reducing manual reporting.",
+      "We needed a solution to help us better manage stakeholder communications, content pipelines, and policy review processes. Tuesday Wizard built a fully customized system within monday.com that keeps everything on track, from content creation to compliance deadlines. Their automations using Zapier have helped us increase accountability while reducing manual reporting.",
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ export const TESTIMONIALS = [
     avatar: t4,
     color: "#b45309",
     quote:
-      "Managing class schedules, student intake, and certification tracking used to be a headache - until Tuesday Wizard stepped in. Their team created a dynamic, automated solution on Monday.com that now runs like clockwork. With integrations for email, calendar, and document workflows, we've drastically cut down on admin time and improved student experience.",
+      "Managing class schedules, student intake, and certification tracking used to be a headache - until Tuesday Wizard stepped in. Their team created a dynamic, automated solution on monday.com that now runs like clockwork. With integrations for email, calendar, and document workflows, we've drastically cut down on admin time and improved student experience.",
   },
   {
     id: 6,
@@ -65,7 +65,7 @@ export const TESTIMONIALS = [
     avatar: t3,
     color: "#be185d",
     quote:
-      "From product development to influencer campaigns, Tuesday Wizard helped us streamline every part of our fashion brand's operation. The Monday.com setup they created allows us to track production milestones, manage launch schedules, and integrate with Shopify and Instagram workflows via Zapier. We're more organized than ever - and our team actually loves using it!",
+      "From product development to influencer campaigns, Tuesday Wizard helped us streamline every part of our fashion brand's operation. The monday.com setup they created allows us to track production milestones, manage launch schedules, and integrate with Shopify and Instagram workflows via Zapier. We're more organized than ever - and our team actually loves using it!",
   },
   {
     id: 7,

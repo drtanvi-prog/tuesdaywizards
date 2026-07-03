@@ -52,7 +52,7 @@ export default function HeroTextContent({ onWatchPromo }) {
               backgroundClip: 'text',
             }}
           >
-            Monday.com CRM
+            monday.com CRM
           </h1>
           <h1 className="text-[32px] sm:text-[38px] lg:text-[44px] xl:text-[52px] font-extrabold text-gray-900 tracking-tight leading-[1.08]">
             &amp; Work Management
@@ -68,7 +68,7 @@ export default function HeroTextContent({ onWatchPromo }) {
 
         {/* Body */}
         <p className="htc-body text-[13.5px] sm:text-[14.5px] text-gray-500 leading-relaxed max-w-xl">
-          Stop overpaying agencies for CRM builds, automation setups, or Monday.com workflows.
+          Stop overpaying agencies for CRM builds, automation setups, or monday.com workflows.
           At Tuesday Wizard, we offer{' '}
           <strong className="text-gray-700 font-semibold">expert system design starting at just $25/hour</strong>
           {' '}so startups and small businesses can scale without financial stress.
@@ -131,3 +131,4 @@ export default function HeroTextContent({ onWatchPromo }) {
     </>
   )
 }
+

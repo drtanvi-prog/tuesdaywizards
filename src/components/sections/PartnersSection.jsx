@@ -164,7 +164,7 @@ export default function PartnersSection() {
         {/* ── Featured partner cards ── */}
         <div className="grid grid-cols-1 gap-4 mb-4">
 
-          {/* Monday.com - full width card */}
+          {/* monday.com - full width card */}
           <motion.div
             className="rounded-2xl overflow-hidden border border-[#e2e8f0] bg-white relative group"
             initial="hidden"

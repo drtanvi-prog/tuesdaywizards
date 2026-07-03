@@ -18,7 +18,7 @@ export const SERVICES = [
     Icon:    WorkspaceIcon,
     label:   'Workspace Setup',
     tagline: 'Tailored monday.com environments',
-    title:   'Monday.com Workspace Setup & Customization',
+    title:   'monday.com Workspace Setup & Customization',
     desc:    'We design and build tailored monday.com workspaces that match your exact business workflows - from project tracking and CRM to HR and operations. Every board, column, and permission is built for your team.',
     features: [
       'Custom board architecture & column setup',
@@ -76,7 +76,7 @@ export const SERVICES = [
     Icon:    CRMIcon,
     label:   'CRM Solutions',
     tagline: 'Sales pipelines built to convert',
-    title:   'Monday.com CRM Setup & Optimization',
+    title:   'monday.com CRM Setup & Optimization',
     desc:    'We configure monday CRM so your sales team gets complete pipeline visibility - from first contact to closed deal. Track leads, automate follow-ups, and close more with a system built around your process.',
     features: [
       'Lead capture & pipeline stage design',

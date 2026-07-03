@@ -91,7 +91,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <p className="text-[13px] text-[#374151] leading-relaxed">
-                  "I used Monday.com to help with my small business. They were able to help me build boards to help me organize my projects. They also helped automate some repetitive tasks and streamline my SOPs. It was a great experience, will use them again if needed in the future!"
+                  "I used monday.com to help with my small business. They were able to help me build boards to help me organize my projects. They also helped automate some repetitive tasks and streamline my SOPs. It was a great experience, will use them again if needed in the future!"
                 </p>
               </div>
 
