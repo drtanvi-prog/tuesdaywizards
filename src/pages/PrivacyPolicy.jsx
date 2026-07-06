@@ -169,7 +169,24 @@ export default function PrivacyPolicy() {
         {/* Section 5 */}
         <Section number={5} title="Third-Party Tools & Platforms">
           <Para>Our services may involve tools such as:</Para>
-          <Bullets items={['monday.com', 'Zapier', 'Make', 'Google Analytics', 'CRM platforms']} />
+          <Bullets items={[
+            'monday.com',
+            'Zapier',
+            'Make',
+            'Google Analytics',
+            'CRM platforms',
+            <div className="flex flex-col gap-2 -mt-0.5">
+              <span>
+                <strong>Our monday.com app uses third-party services:</strong> Our backend application makes secure requests to a few specific third-party APIs to power the core functionality of the app. We do not use any third-party analytics, monitoring, ad platforms, or trackers (such as Google Analytics or Facebook Pixel) on either the frontend or backend.
+              </span>
+              <span>List of all 3rd-party domains/products and why they are used:</span>
+              <Bullets items={[
+                <><strong className="text-gray-900">Supabase:</strong> Used strictly by the backend as our managed PostgreSQL database provider. It securely stores user settings, automation templates, and audit logs.</>,
+                <><strong className="text-gray-900">Groq API:</strong> Used by the backend as our primary fallback AI inference provider. It acts as a fail-safe to power the semantic matching engine and dynamic template generation if the primary Monday AI Gateway is unreachable or blocked for free users.</>,
+                <><strong className="text-gray-900">DeepSeek API:</strong> Used by the backend as a secondary fallback AI provider. It acts as an ultimate safety net to ensure maximum uptime for our automated AI features.</>
+              ]} />
+            </div>
+          ]} />
           <Para>
             These platforms have their own privacy policies. We recommend reviewing them as we are not responsible for their practices.
           </Para>
