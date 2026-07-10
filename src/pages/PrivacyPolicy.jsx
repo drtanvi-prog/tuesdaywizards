@@ -182,7 +182,7 @@ export default function PrivacyPolicy() {
               <span>List of all 3rd-party domains/products and why they are used:</span>
               <Bullets items={[
                 <><strong className="text-gray-900">Supabase:</strong> Used strictly by the backend as our managed PostgreSQL database provider. It securely stores user settings, automation templates, and audit logs.</>,
-                <><strong className="text-gray-900">Groq API:</strong> Used by the backend as our primary fallback AI inference provider. It acts as a fail-safe to power the semantic matching engine and dynamic template generation if the primary Monday AI Gateway is unreachable or blocked for free users.</>,
+                <><strong className="text-gray-900">Groq API:</strong> Used by the backend as our primary fallback AI inference provider. It acts as a fail-safe to power the semantic matching engine and dynamic template generation if the primary monday AI Gateway is unreachable or blocked for free users.</>,
                 <><strong className="text-gray-900">DeepSeek API:</strong> Used by the backend as a secondary fallback AI provider. It acts as an ultimate safety net to ensure maximum uptime for our automated AI features.</>
               ]} />
             </div>
