@@ -168,13 +168,15 @@ export default function PrivacyPolicy() {
 
         {/* Section 5 */}
         <Section number={5} title="Third-Party Tools & Platforms">
-          <Para>Our services may involve tools such as:</Para>
+          {/* <Para>Our services may involve tools such as:</Para> */}
           <Bullets items={[
+            /*
             'monday.com',
             'Zapier',
             'Make',
             'Google Analytics',
             'CRM platforms',
+            */
             <div className="flex flex-col gap-2 -mt-0.5">
               <span>
                 <strong>Our monday.com app uses third-party services:</strong> Our backend application makes secure requests to a few specific third-party APIs to power the core functionality of the app. We do not use any third-party analytics, monitoring, ad platforms, or trackers (such as Google Analytics or Facebook Pixel) on either the frontend or backend.
