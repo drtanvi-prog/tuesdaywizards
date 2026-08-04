@@ -202,7 +202,7 @@ export default function HowToUse() {
         fontFamily:
           "ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
         overflowY: "auto",
-        padding: isMobile ? "48px 20px 96px" : "72px 40px 120px",
+        padding: isMobile ? "48px 20px 48px" : "72px 40px 64px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
