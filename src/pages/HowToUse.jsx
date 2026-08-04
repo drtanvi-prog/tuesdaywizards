@@ -50,7 +50,27 @@ export default function HowToUse() {
       }
     };
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+
+    // Hide Tawk.to chat widget if present
+    if (window.Tawk_API) {
+      if (typeof window.Tawk_API.hideWidget === "function") {
+        window.Tawk_API.hideWidget();
+      }
+      // Handle lazy loading hook
+      window.Tawk_API.onLoad = function () {
+        if (typeof window.Tawk_API.hideWidget === "function") {
+          window.Tawk_API.hideWidget();
+        }
+      };
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      // Show Tawk.to chat widget when leaving this page
+      if (window.Tawk_API && typeof window.Tawk_API.showWidget === "function") {
+        window.Tawk_API.showWidget();
+      }
+    };
   }, []);
 
   const sections = [
