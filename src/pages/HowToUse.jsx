@@ -53,19 +53,33 @@ export default function HowToUse() {
     };
     window.addEventListener("keydown", handleKeyDown);
 
-    if (window.Tawk_API) {
-      if (typeof window.Tawk_API.hideWidget === "function") {
+    // Add CSS fallback class to body
+    document.body.classList.add("hide-chat-widget");
+
+    const hideTawk = () => {
+      if (window.Tawk_API && typeof window.Tawk_API.hideWidget === "function") {
         window.Tawk_API.hideWidget();
+        return true;
       }
-      window.Tawk_API.onLoad = function () {
-        if (typeof window.Tawk_API.hideWidget === "function") {
-          window.Tawk_API.hideWidget();
-        }
-      };
-    }
+      return false;
+    };
+
+    // Try immediately and set onLoad handler
+    hideTawk();
+    window.Tawk_API = window.Tawk_API || {};
+    const oldOnLoad = window.Tawk_API.onLoad;
+    window.Tawk_API.onLoad = function () {
+      if (typeof oldOnLoad === "function") oldOnLoad();
+      hideTawk();
+    };
+
+    // Backup polling check to handle asynchronous initialization
+    const interval = setInterval(hideTawk, 200);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      document.body.classList.remove("hide-chat-widget");
+      clearInterval(interval);
       if (window.Tawk_API && typeof window.Tawk_API.showWidget === "function") {
         window.Tawk_API.showWidget();
       }

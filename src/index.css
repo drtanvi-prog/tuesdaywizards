@@ -187,3 +187,14 @@ button {
       transparent 60%);
   animation: shine-sweep 3s ease-in-out infinite;
 }
+
+/* CSS fallback to hide Tawk.to chat widget */
+body.hide-chat-widget iframe[src*="tawk.to"],
+body.hide-chat-widget [id*="tawk"],
+body.hide-chat-widget [class*="tawk"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
