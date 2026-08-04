@@ -5,6 +5,7 @@ import Header from './components/common/Header'
 import Footer from './components/common/Footer'
 import ScrollToTop from './components/common/ScrollToTop'
 import Home from './pages/Home'
+import HowToUse from "./pages/HowToUse";
 // import WizClonePage from './pages/WizClone'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsAndConditions from './pages/TermsAndConditions'
@@ -32,6 +33,7 @@ const App = () => (
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/tc" element={<TermsAndConditions />} />
       </Route>
+      <Route path="/wizclone/how-to-use" element={<HowToUse />} />
       <Route path="/thank-you-page" element={<ThankYou />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
